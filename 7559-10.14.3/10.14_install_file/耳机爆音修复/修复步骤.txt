@@ -1,4 +1,0 @@
-1. 挂载EFI,将三个驱动文件（AppleALC1.2.8.kext CodecCommander.kext Lilu_v1.2.7.kext ）复制到Clover/Kexts/Other
-2. 进入ALCPlugFix目录
-3. 双击 ”install双击自动安装.command“
-4. 重启

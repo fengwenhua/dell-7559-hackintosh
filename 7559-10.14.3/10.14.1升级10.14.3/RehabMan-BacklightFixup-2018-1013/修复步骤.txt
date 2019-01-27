@@ -1,7 +1,0 @@
-1. 升级完成后,发现声音没了,背光无法调节
-2. 下载亮度调节驱动下载: https://bitbucket.org/RehabMan/applebacklightfixup/downloads/
-3. 通过KCPM Utility Pro将AppleBacklightFixup.kext装进/L/E/下
-4. 将EFI/EFI/CLOVER/ACPI/patched下的,原来的SSDT-PNLF.aml和SSDT-PNLF-AppleBacklight.aml删掉
-5. 然后将下载下来的SSDT-PNLF.aml放在patched下
-6. 重启即可
-
