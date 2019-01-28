@@ -437,6 +437,5 @@ sudo touch /System/Library/Extensions && sudo kextcache -u /
 5. 然后将下载下来的`SSDT-PNLF.aml`放在`patched`下
 6. 重启即可
 
-> 本教程的所有文件已经上传到GitHub上,如果PB币不够的话,可以上GitHub下载,[dell 7559 教程附件GitHub地址](https://github.com/fengwenhua/dell7559-hackintosh),如果PB币够的话,可以花一个PB币下载txt附件,去百度网盘下载.所以附件内容是百度云链接
 
 
