@@ -1,0 +1,7 @@
+Sinetek-rtsx.kext: SD卡驱动,没测试过,不知道有没有用
+BrcmFirmwareData.kext和BrcmNonPatchRAM2.kext和BrcmPatchRAM2.kext: 蓝牙驱动
+FakePCIID_Broadcom_WiFi.kext: 无线网卡驱动
+FakePCIID_Intel_HD_Graphics.kext: 内置显卡驱动
+FakePCIID_Intel_HDMI_Audio.kext: HDMI_Audio驱动
+FakePCIID.kext: 没有这个,上面几个FakePCIID_xxx都无法正常工作
+

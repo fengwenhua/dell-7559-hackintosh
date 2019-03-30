@@ -1,14 +1,17 @@
-# 7559黑苹果
-> 参考链接: [Dell 7559 安装10.14GM教程（i5+UEFI）](http://bbs.pcbeta.com/viewthread-1794485-1-1.html)
-这位大佬的教程已经很完善了,只不过本人是小白,所以对这位大佬的教程进行了一些补充,如果你已经按照他的教程安装完成了,现在是10.14或者10.14.1,你需要做的就是 **升级到现在最新的10.14.3,然后跳到 0x05蓝牙不可关闭修复开始**
+# 7559黑苹果10.14.4
 
+> 参考链接: [Dell 7559 安装10.14GM教程（i5+UEFI）](http://bbs.pcbeta.com/viewthread-1794485-1-1.html)
+
+> 安装10.14.3链接: [Dell-7559-10.14.3](https://fengwenhua.top/2019/02/14/dell-7559-10-14-3-黑苹果/)
+
+* 最近出了10.14.4, 忍不住升级了一波,结果黑屏....好吧,一怒之下,直接重装,就是这么霸气!
 * 好吧,废话少说,先看看效果然后再决定往下看
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128210751.png)
+![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171111.png)
 
 1. 声卡完美,耳机自动切换,笔记本快捷键,`F1`静音,`F2`调低声音和`F3`调高声音
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128210835.png)
+![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171125.png)
 
 ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128211546.png)
 
@@ -18,29 +21,29 @@
 
 3. USB3.0驱动成功
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128211704.png)
+![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171135.png)
 
-4. 蓝牙可用
+4. 蓝牙可用,可关闭打开
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128211735.png)
+![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171149.png)
 
 5. 睡眠可用,电量正常显示
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128211818.png)
+![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171224.png)
 
 ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128211908.png)
 
 6. 摄像头可用,使用mac自带的`Photo Booth`检测
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128212148.png)
+![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171234.png)
 
 7. 独显已经屏蔽
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128212230.png)
+![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171243.png)
 
 8. 可变频,测试软件[Intel Power Gadget](https://software.intel.com/en-us/articles/intel-power-gadget-20)和[cpu-s](http://bbs.pcbeta.com/viewthread-1698338-1-1.html),这两个软件我已经下载好放在附件中了
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128213353.png)
+![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171253.png)
 
 
 ## 0x00 电脑配置
@@ -52,7 +55,7 @@
 * BIOS版本:1.2.8
 
 ## 0x01 BIOS准备
-1. 如果cpu是i5的,则需要去官网下载1.0.1的BIOS版本刷入
+1. 如果cpu是i5的,则需要去官网下载1.0.1的BIOS版本刷入,我是i7,所以不用管
 2. 更改BIOS设置如下
 
 ```
@@ -67,10 +70,11 @@
 
 ## 0x02 系统安装
 
-1. 下载macOS Mojave镜像: [【黑果小兵】macOS Mojave 10.14.3 18D42 正式版 with Clover 4859原版镜像](https://blog.daliansky.net/macOS-Mojave-10.14.3-18D42-official-version-with-Clover-4859-original-image.html)
-2. 检查下载的系统的md5是否是下载链接处提供的`450c55e5c5d3f4bfae6bb55ff2a33aea`
+1. 下载macOS Mojave镜像: [黑果小兵】macOS Mojave 10.14.4 18E226 正式版 with Clover 4903原版镜像](https://blog.daliansky.net/macOS-Mojave-10.14.4-18E226-official-version-with-Clover-4903-original-image.html)
+2. 检查下载的系统的md5是否是下载链接处提供的`ee923768b29194efc704bcf34d7f9fd8`
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128203547.png)
+![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171306.png)
+
 
 * windows下,使用`certutil`命令
 
@@ -97,50 +101,53 @@ md5 系统镜像
 
 ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128203143.png)
 
-4. 在windows下,使用`Diskgenius`,mac下使用`Clover Configurator`挂载U盘的EFI分区,然后将附件中的`CLOVER`文件夹**替换**u盘`EFI`文件夹中的`CLOVER`,
+4. 在windows下,使用`Diskgenius`,mac下使用`Clover Configurator`挂载U盘的EFI分区,我们需要修改一下`config.plist`,将原来默认的`config.plist`重命名成`config_bak.plist`,然后找到有`530`字眼的config文件,将其重命名为`config.plist`
 
-> ps:如果你的配置以及Bios版本和我的一致,先删除U盘中的`CLOVERE`,然后你可以直接将附件中的`最终的CLOVER`重命名成CLOVER,然后放到U盘的EFI分区里面
+![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171319.png)
 
-* 使用`Diskgenius`替换`CLOVER`: 这里记得一点,删除原来的`CLOVER`之后,直接将附件的`CLOVER`拖动进去是没用的,需要用快捷键`CTRL+C`和`CTRL+V`
+> ps:如果你的配置以及Bios版本和我的一致,先删除U盘中的`CLOVERE`,然后你可以直接将附件中的`最终的CLOVER`重命名成`CLOVER`,然后放到U盘的EFI分区里面,当然,不能保证可以进入系统!最好还是跟我教程,自己一步步安装!
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128202335.png)
-
-* 使用`Clover Configurator`分别挂载U盘和本地的EFI
-
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128204039.png)
-
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128204301.png)
-
-
-5. 然后可以拿着这个U盘启动盘去装系统了,具体的如何安装系统以及将启动U盘的CLOVER放在本地的EFI下的步骤这里略过,如果上面的操作正常,安装完成后是可以进入到mac系统的
+5. 然后可以拿着这个U盘启动盘去装系统了,具体的**如何安装系统以及将启动U盘的CLOVER放在本地的EFI下**的步骤这里略过,如果上面的操作正常,安装完成后是可以进入到mac系统的
 
 ## 0x03 驱动安装
-1. 移除驱动，终端输入：
+1. `Clover Configurator`挂载本地`EFI`,进入`/EFI/CLOVER/kexts/Other`,移除多余的驱动,以及增加一些必备的驱动.
+
+原来的如下:
+
+![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171331.png)
+
+修改后如下:  下面增加的驱动,都可以在下面`Backup`文件夹找到, 如果找不到,就去`最终的clover`那里找
+
+![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171341.png)
+
+2. 让`Other`下的驱动可以生效, 打开`/EFI/CLOVER/config.plist`,在`System Parameters->Inject Kexts`改成`Yes`,然后保存
+
+![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171350.png)
+
+3. 移除键鼠标驱动, 防止与`Other`下的鼠标驱动`ApplePS2SmartTouchPad.kext`冲突, 终端输入：
 
 ```
 sudo rm -rf /System/Library/Extensions/AppleACPIPS2Nub.kext
 ```
 
-2. 将附件中的驱动使用`KCMP Utility Pro`安装至`L/E`分区,非常简单,将这些驱动全部拖进去即可安装
+4. 安装`Clover_v2.4k_r4901.pkg`,这个很重要,需要自定义安装`RC Scripts`,不然可能无法保存背光
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128204359.png)
+![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171402.png)
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128204451.png)
-
-3. 重启准备进行`dsdt`和`ssdt`制作
+5. 重启准备进行`dsdt`和`ssdt`制作
 
 ## 0x04 DSDT和SSDT文件制作
-> 如果你对BIOS版本和我的一样,那么直接用我`CLOVER/ACPI/patched`文件夹里面的文件即可,也就是说不用看这节的内容了.需要说明的是,一般来说,不同BIOS版本的文件不能通用，容易出错
+> 如果你对BIOS版本和我的一样,那么直接用我`CLOVER/ACPI/patched`文件夹里面的文件即可,也就是说不用看这节的内容了.需要说明的是,一般来说,不同BIOS版本的文件不能通用，容易出错, 从而进不去系统
 
 #### 前期准备
-1. 开机选择Mac图标,按下`F4`，所需文件将会出现在`EFI/Clover/ACPI/origin`文件夹
+1. 开机选择Mac图标,按下`F4`，所需文件会自动出现在`EFI/Clover/ACPI/origin`文件夹
 2. 使用`Clover Configurator`加载引导分区EFI,如下图
 
 ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127220355.png)
 
 3. 将`EFI/Clover/ACPI/`下的`origin`文件夹复制到桌面
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127220418.png)
+![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171447.png)
 
 
 4. 复制附件中的`iasl`和`refs`文件至桌面的`origin`文件夹
@@ -153,7 +160,7 @@ iasl -da -dl -fe refs.txt DSDT.aml SSDT*.aml
 ```
  将会有`****.dsl`文件创建于`origin`文件夹,如下图
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127220427.png)
+![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171500.png)
 
 #### DSDT文件制作
 > 注意每改一下,都要`Compile`一下,查看是否有error,修复它,不管warning
@@ -274,16 +281,18 @@ Method (M_OF, 0, NotSerialized)
 
 6. 点击`Compile`，检查有无错误，无错误则选择`File`->`Save as...`->`ACPI Machine Language Binary`格式保存至桌面，有错误则从头再来
 
-![](_v_images/20190127214617502_1679233775.png)
+![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171516.png)
 
-#### SSDT-5-SaSsdt.aml制作
-1. 打开`SSDT-5-SaSsdt.dsl`，先点`Compile`,没有error之后,再点击`patch`，选择`[igpu] Rename GFX0 to IGPU`  然后点击`Apply`,同理另存为`ACPI Machine Language Binary`格式保存至**桌面,**如下两个图
+7. 拷贝制作的`DSDT.aml`文件至引导分区`EFI/Clover/ACPI/patched`
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127220855.png)
+#### SSDT-5.aml制作
+1. 打开`SSDT-5.dsl`，先点`Compile`,没有error之后,再点击`patch`，选择`[igpu] Rename GFX0 to IGPU`  然后点击`Apply`,同理另存为`ACPI Machine Language Binary`格式保存至**桌面,**如下两个图
+
+![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171523.png)
 
 ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127220918.png)
 
-2. 拷贝制作的`SSDT-5-SaSsdt.aml`文件和附件中`SSDT-PNLF.aml`、`SSDT-UIAC.aml`至引导分区`EFI/Clover/ACPI/patched`
+2. 拷贝制作的`SSDT-5.aml`文件和附件中`SSDT-PNLF.aml`、`SSDT-UIAC.aml`至引导分区`EFI/Clover/ACPI/patched`
 
 #### 制作SSDT.aml
 * 打开终端,输入下方两条指令
@@ -313,7 +322,7 @@ cp /Users/用户名/Library/ssdtPRGen/ssdt.aml /Users/用户名/Desktop/SSDT.aml
 
 同理把`SSDT.aml`拷贝至引导分区`EFI/Clover/ACPI/patched` 至此你的`patched`文件夹应包含以下内容
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127220929.png)
+![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171537.png)
 
 然后重启即可
 
@@ -392,14 +401,15 @@ cp /Users/用户名/Library/ssdtPRGen/ssdt.aml /Users/用户名/Desktop/SSDT.aml
 
 ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127221156.png)
 
-4. 切换到`Devices`标签,Audio下的Inject选择13
+4. 切换到`Devices`标签,Audio下的`Inject`选择`13`
+> 其实这一步操不操作没关系,因为我们已经在DSDT.aml中指定了
 
 ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127221357.png)
 
 4. 重启
 
-## 0x07 触摸板软点击(可选)
-> 进行了这步操作,触摸板可进行软点击,但是多指手势就没了
+## 0x07 触摸板
+> `ApplePS2SmartTouchPad.kext`的作者已经不更新多年了, 本人装了这个驱动, 虽然触摸板上可以看到手势,但是却一个也用不了... ...所以下面是讲怎么安装`RehabMan`的触摸板驱动`VoodooPS2Controller.kext`的, 当然,如果你嫌麻烦,直接下载`VoodooPS2Controller.kext`放到`Other`下,然后重启一波就行!
 
 1. 安装指导链接 https://github.com/RehabMan/OS-X-Voodoo-PS2-Controller/wiki/How-to-Install
 2. 软件下载链接 https://bitbucket.org/RehabMan/os-x-voodoo-ps2-controller/downloads/
@@ -427,15 +437,33 @@ sudo touch /System/Library/Extensions && sudo kextcache -u /
 
 ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128211336.png)
 
-## 0x08 10.14.1升级10.14.3的背光修复
-> 如果你是按照我的教程来重新安装10.14.3,那么不用看下面,如果你是安装我参照的教程安装的10.14或10.14.1,则需要执行下方教程
+## 0x08 背光保存
+* 删除`/EFI/CLOVER/drivers64UEFI/EmuVariableUefi-64.efi`,然后重启两遍以上,即可保存背光亮度
 
-1. 升级完成后,发现声音没了,背光无法调节
-2. 下载亮度调节驱动下载: https://bitbucket.org/RehabMan/applebacklightfixup/downloads/
-3. 通过`KCPM Utility Pro`将`AppleBacklightFixup.kext`装进`/L/E/`下
-4. 将`EFI/EFI/CLOVER/ACPI/patched`下的,原来`的SSDT-PNLF.aml`和`SSDT-PNLF-AppleBacklight.aml`删掉
-5. 然后将下载下来的`SSDT-PNLF.aml`放在`patched`下
-6. 重启即可
+![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171552.png)
 
+## 0x09 其他的驱动
+* 将`其他的驱动`里面的驱动拖到`/EFI/CLOVER/kexts/Other`里面
+
+驱动名|驱动内容
+--|--
+Sinetek-rtsx.kext|SD卡驱动,没测试过,不知道有没有用
+BrcmFirmwareData.kext和BrcmNonPatchRAM2.kext和BrcmPatchRAM2.kext|蓝牙驱动
+FakePCIID_Broadcom_WiFi.kext|无线网卡驱动
+FakePCIID_Intel_HD_Graphics.kext|内置显卡驱动
+FakePCIID_Intel_HDMI_Audio.kext|HDMI_Audio驱动
+FakePCIID.kext|没有这个,上面几个FakePCIID_xxx都无法正常工作
+
+* 这个给出`蓝牙驱动`和`FakePCIID系列`的下载地址
+
+```
+https://bitbucket.org/RehabMan/os-x-brcmpatchram/downloads/
+https://bitbucket.org/RehabMan/os-x-fake-pci-id/downloads/
+```
+
+* 关于驱动的说明: http://bbs.pcbeta.com/viewthread-1779539-1-1.html
+
+## 最后
+* 欢迎大家访问我的博客: https://fengwenhua.top , 虽然博客上面没啥东西!
 
 
