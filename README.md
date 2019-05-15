@@ -466,4 +466,8 @@ https://bitbucket.org/RehabMan/os-x-fake-pci-id/downloads/
 ## 最后
 * 欢迎大家访问我的博客: https://fengwenhua.top , 虽然博客上面没啥东西!
 
+# 更新到10.14.5
+* 直接更新, 然后按照上面的教程修复蓝牙即可, 其他的(如背光, 声音等)都没有问题.
 
+Sinetek-rtsx.kext|SD卡驱动,没测试过,不知道有没有用没哟
+Sinetek-rtsx.kext|SD卡驱动,没测试过,不知道有没有用
