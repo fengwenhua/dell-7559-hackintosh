@@ -453,6 +453,8 @@ FakePCIID_Broadcom_WiFi.kext|无线网卡驱动
 FakePCIID_Intel_HD_Graphics.kext|内置显卡驱动
 FakePCIID_Intel_HDMI_Audio.kext|HDMI_Audio驱动
 FakePCIID.kext|没有这个,上面几个FakePCIID_xxx都无法正常工作
+Sinetek-rtsx.kext|SD卡驱动,没测试过,不知道有没有用没哟
+Sinetek-rtsx.kext|SD卡驱动,没测试过,不知道有没有用
 
 * 这个给出`蓝牙驱动`和`FakePCIID系列`的下载地址
 
@@ -469,5 +471,4 @@ https://bitbucket.org/RehabMan/os-x-fake-pci-id/downloads/
 # 更新到10.14.5
 * 直接更新, 然后按照上面的教程修复蓝牙即可, 其他的(如背光, 声音等)都没有问题.
 
-Sinetek-rtsx.kext|SD卡驱动,没测试过,不知道有没有用没哟
-Sinetek-rtsx.kext|SD卡驱动,没测试过,不知道有没有用
+
