@@ -1,3 +1,10 @@
+# 更新到10.14.5
+* 直接更新, 然后按照上面的教程修复蓝牙即可, 其他的(如背光, 声音等)都没有问题. ~~唯一不爽的是, Karabiner不起作用...现在我的windows键与alt键没办法交换回来... ...~~(自己好了... .)
+
+![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190515131242.png)
+
+---
+
 # 7559黑苹果10.14.4
 
 > 参考链接: [Dell 7559 安装10.14GM教程（i5+UEFI）](http://bbs.pcbeta.com/viewthread-1794485-1-1.html)
@@ -468,10 +475,7 @@ https://bitbucket.org/RehabMan/os-x-fake-pci-id/downloads/
 ## 最后
 * 欢迎大家访问我的博客: https://fengwenhua.top , 虽然博客上面没啥东西!
 
-# 更新到10.14.5
-* 直接更新, 然后按照上面的教程修复蓝牙即可, 其他的(如背光, 声音等)都没有问题. ~~唯一不爽的是, Karabiner不起作用...现在我的windows键与alt键没办法交换回来... ...~~(自己好了... .)
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190515131242.png)
 
 
 
