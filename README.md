@@ -1,3 +1,16 @@
+# usb网卡
+> 老实说, 前段时间`macOS Catalina`出了, 我也想升级一波, 但是想想, 还是等正式版出了再说吧
+
+昨天从柜子找出一个802.11 的usb网卡, 我的笔记本现在用不了wifi(主要是穷...), 想着大佬肯定有驱动, 结果一找, 果然有, 装好后直接可以用了, usb网卡驱动地址: https://github.com/chris1111/Wireless-USB-Adapter-Clover/releases
+
+![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190612200855.png)
+
+![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190612200909.png)
+
+![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190612200921.png)
+
+---
+
 # 更新到10.14.5
 * 直接更新, 然后按照上面的教程修复蓝牙即可, 其他的(如背光, 声音等)都没有问题. ~~唯一不爽的是, Karabiner不起作用...现在我的windows键与alt键没办法交换回来... ...~~(自己好了... .)
 
