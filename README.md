@@ -1,7 +1,8 @@
 # 更新到10.14.6
 * 直接更新, 然后按照下面的教程修复蓝牙即可
-* 背光可调节, 但是小太阳不见了... ...
+* 背光可调节, 但是小太阳不见了... ...留着之后和触摸板一起解决
 * 另外, 我在github上搜索下载安装了最新的WhateverGreen, Lilu 和 AppleALC
+* 最新的驱动已上传到github上
 
 ---
 
@@ -213,7 +214,7 @@ iasl -da -dl -fe refs.txt DSDT.aml SSDT*.aml
 -[syn] Rename _DSM methods to XDSM
 -[Audio] Audio Layout 3
 -[bat] Dell Inspiron 15-7xxx
--[sys] Fix _WAK Arg0 v2 
+-[sys] Fix _WAK Arg0 v2
 -[sys] Fix Mutex with non-zero SyncLevel
 -[sys] HPET Fix
 -[sys] IRQ fix
