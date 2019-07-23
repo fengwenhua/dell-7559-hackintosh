@@ -4,6 +4,8 @@
 * 另外, 我在github上搜索下载安装了最新的WhateverGreen, Lilu 和 AppleALC
 * 最新的驱动已上传到github上
 
+![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190723115828.png)
+
 ---
 
 # usb网卡
