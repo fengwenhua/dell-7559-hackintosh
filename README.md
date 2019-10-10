@@ -78,15 +78,15 @@
 1. 如果cpu是i5的,则需要去官网下载1.0.1的BIOS版本刷入,我是i7,所以不用管
 2. 更改BIOS设置如下
 
-    ```
-     - 恢复BIOS默认设置
-     - AHCI mode 选择 SATA
-     - 关闭 VT for direct I/O
-     - 关闭 Advanced Battery Charging
-     - 关闭 Secure boot
-     - 关闭 SupportAssist System Resolution
-     - 关闭 Firmware TPM
-    ```
+```
+ - 恢复BIOS默认设置
+ - AHCI mode 选择 SATA
+ - 关闭 VT for direct I/O
+ - 关闭 Advanced Battery Charging
+ - 关闭 Secure boot
+ - 关闭 SupportAssist System Resolution
+ - 关闭 Firmware TPM
+```
 
 ## 0x04 系统安装
 
@@ -95,31 +95,29 @@
 
     ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1570704013.png)
 
-
     * windows下,使用`certutil`命令
 
-    ```
-    certutil -hashfile 系统镜像 MD5
-    ```
+        ```
+        certutil -hashfile 系统镜像 MD5
+        ```
 
     * mac下使用`md5`
 
-    ```
-    md5 系统镜像
-    ```
-
+        ```
+        md5 系统镜像
+        ```
 
 3. 如果在windows下,则使用`transmac`将镜像写入U盘,如果在mac上,则使用`balenaEtcher`将镜像写入U盘
 
     * 使用`transmac`将镜像写入U盘:先选择`Format Disk for Mac`格式化为Mac格式,然后选择`Restore with Disk Image`将镜像写入U盘
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128202859.png)
+        ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128202859.png)
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128203110.png)
+        ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128203110.png)
 
     * 使用`balenaEtcher`将镜像写入U盘:傻瓜式操作,选择下载的系统镜像,选择U盘,然后点击`Flash`,等待即可
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128203143.png)
+        ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128203143.png)
 
 4. 在windows下,使用`Diskgenius`,mac下使用`Clover Configurator`挂载U盘的EFI分区,我们需要修改一下`config.plist`,将原来默认的`config.plist`重命名成`config_bak.plist`,然后找到有`530`字眼的config文件,将其重命名为`config.plist`
 
@@ -233,16 +231,17 @@
 
     * 下面以`[syn] Rename _DSM methods to XDSM`为例,点击`Patch`,选择`_RehabMan Laptop`(这个名字是自己取的,只要Patch源是  http://raw.github.com/RehabMan/Laptop-DSDT-Patch/master 即可)
 
-    > 我放在附件中的`MaciASL`是最新版本的,已经包含了`RehabMan Laptop`的源,如下图.如果你发现点击`Patch`之后**显示空白**,则说明网络不好,要么等一会,要么科学上网.
+        > 我放在附件中的`MaciASL`是最新版本的,已经包含了`RehabMan Laptop`的源,如下图.如果你发现点击`Patch`之后**显示空白**,则说明网络不好,要么等一会,要么科学上网.
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128185836.png)
+        ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128185836.png)
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127220635.png)
+        ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127220635.png)
 
     * 选择`[syn] Rename _DSM methods to XDSM`之后,等一会,然后点击`Apply`,然后再等一会,指导右边上下两个框框都没有东西了,说明替换成功
-    > ps:这里多说一句,如果你是程序员的话,应该明白,这个本质就是通过正则匹配,然后替换成指定内容而已,当然这个具体为什么替换成这些内容,只有问RehabMan大佬了
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127220653.png)
+        > ps:这里多说一句,如果你是程序员的话,应该明白,这个本质就是通过正则匹配,然后替换成指定内容而已,当然这个具体为什么替换成这些内容,只有问RehabMan大佬了
+
+        ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127220653.png)
 
 5. 查找`layout`，并将`3`替换为`13`
 
