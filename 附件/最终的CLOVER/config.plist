@@ -264,9 +264,7 @@
 		<key>Arguments</key>
 		<string>nv_disable=1 dart=0 kext-dev-mode=1 -lilubetaall -alcbeta</string>
 		<key>DefaultVolume</key>
-		<string>macOS</string>
-		<key>Legacy</key>
-		<string>PBR</string>
+		<string>LastBootedVolume</string>
 		<key>NeverHibernate</key>
 		<true/>
 		<key>Secure</key>
@@ -450,7 +448,7 @@
 			<true/>
 		</dict>
 		<key>Theme</key>
-		<string>Simple</string>
+		<string>Hackintosh_ID</string>
 	</dict>
 	<key>Graphics</key>
 	<dict>
@@ -814,20 +812,70 @@
 		<string>0x28</string>
 		<key>CsrActiveConfig</key>
 		<string>0x67</string>
+		<key>MLB</key>
+		<string>C02624310GUDYWF8C</string>
+		<key>ROM</key>
+		<data>
+		3yj8JLQR
+		</data>
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
+		<key>BiosReleaseDate</key>
+		<string>06/26/2018</string>
+		<key>BiosVendor</key>
+		<string>Apple Inc.</string>
+		<key>BiosVersion</key>
+		<string>MBP133.88Z.0247.B00.1806261159</string>
+		<key>Board-ID</key>
+		<string>Mac-A5C67F76ED83108C</string>
+		<key>BoardManufacturer</key>
+		<string>Apple Inc.</string>
+		<key>BoardSerialNumber</key>
+		<string>C02624310GUDYWF8C</string>
+		<key>BoardType</key>
+		<integer>10</integer>
+		<key>BoardVersion</key>
+		<string>1.0</string>
+		<key>ChassisAssetTag</key>
+		<string>MacBook-Aluminum</string>
+		<key>ChassisManufacturer</key>
+		<string>Apple Inc.</string>
+		<key>ChassisType</key>
+		<string>0x09</string>
+		<key>Family</key>
+		<string>MacBook Pro</string>
+		<key>FirmwareFeatures</key>
+		<string>0xFC0FE13F</string>
+		<key>FirmwareFeaturesMask</key>
+		<string>0xFF1FFF3F</string>
+		<key>LocationInChassis</key>
+		<string>Part Component</string>
+		<key>Manufacturer</key>
+		<string>Apple Inc.</string>
+		<key>Mobile</key>
+		<true/>
+		<key>PlatformFeature</key>
+		<string>0x1A</string>
 		<key>ProductName</key>
-		<string>MacBookAir6,2</string>
+		<string>MacBookPro13,3</string>
 		<key>ProductName-Comment</key>
 		<string>Using Haswell MacBookAir6,2 until Clover has support for Skylake identifiers</string>
+		<key>SerialNumber</key>
+		<string>C02RV7ZLGTFN</string>
+		<key>SmUUID</key>
+		<string>90EE56C2-C943-4B37-9D99-B25DCA24B411</string>
 		<key>Trust</key>
 		<true/>
+		<key>Version</key>
+		<string>1.0</string>
 	</dict>
 	<key>SystemParameters</key>
 	<dict>
 		<key>#BacklightLevel</key>
 		<integer>0</integer>
+		<key>CustomUUID</key>
+		<string>90EE56C2-C943-4B37-9D99-B25DCA24B411</string>
 		<key>InjectKexts</key>
 		<string>Yes</string>
 	</dict>
