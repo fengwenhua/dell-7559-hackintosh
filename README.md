@@ -537,6 +537,20 @@ cp /Users/用户名/Library/ssdtPRGen/ssdt.aml /Users/用户名/Desktop/SSDT.aml
 
 > 如果不行的话, 千万憋找我~~~
 
+## 0x15 触摸板修复
+本来想好好搞一下i2c驱动起来的, 但是实在是没时间, 有能力的兄弟可以帮忙搞搞, 链接如下:
+https://www.penghubingzhou.cn/2019/01/06/VoodooI2C%20DSDT%20Edit/
+
+现在的话, 大家先把`/EFI/CLOVER/kexts/Other`下的`VoodooPS2Controller_v1.9.2.kext`换成`ApplePS2SmartTouchPad.kext`, 这样的话, 触摸板就可以简单使用了
+
+```
+单指单击相当于鼠标左键
+两指滚动相当于鼠标滚轮
+三指点击相当于鼠标右键
+```
+
+(这里先留个坑, 以后再搞)
+
 ## 最后
 * 附件什么的, 全部已上传至 github: https://github.com/fengwenhua/dell-7559-hackintosh
 * 欢迎大家访问我的博客: https://fengwenhua.top , 虽然博客上面没啥东西!
