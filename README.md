@@ -1,3 +1,92 @@
+
+# 2019.11.9 更新10.15.1
+直接在系统设置那里更新
+
+更新完成之后, 发现声音没了, 蓝牙, wifi, 小太阳正常
+
+修复声音: 更新lilu applealc whatevergreen到最新版本即可
+
+# 2019.11.1 更换网卡1820A
+最近拿到了心目中的offer, 感觉飘飘然, 于是乎, 某宝花了70大洋, 干了一个1820A, 以下就是安装教程
+
+## 注意
+如果你系统还没安装好, 就直接插上1820A网卡, 可能会一直卡住, 无法进入安装界面... 所以只能拔卡了~~~
+
+如果你已经装好系统Catalina了, 更换成1820A网卡, 你可能会遇到下面两种错误
+
+### Begin Gfx firmware load process 错误
+```
+在启动参数里加 -disablegfxfirmware 就好了
+```
+
+![](https://raw.githubusercontent.com/fengwenhua/api-test/master/1573036545_20191020085411554_977482903.png)
+
+
+### appleintellpssi2ccontroller ftimerservicematching timed out 错误
+
+删掉`/System/Library/Extensions/`下的`AppleIntelLpssI2C.kext` 和 `AppleIntelLpssI2CController.kext`
+
+## 我的安装步骤
+1. 安装10.14.5, 进入系统
+2. 替换`clover.efi`为最新, 替换`whatevergreen`, `lilu`, `AppleALC`为最新
+3. 删掉`/System/Library/Extensions/`下的`AppleIntelLpssI2C.kext` 和 `AppleIntelLpssI2CController.kext`
+4. 在启动参数里加 `-disablegfxfirmware`
+5. 重启, 进入系统设置更新catalina
+6. 更新完后, 如果还遇到上面提到的第二种错误, 则拔卡, 正常进入Catalina, 再删一遍`/System/Library/Extensions/`下的`AppleIntelLpssI2C.kext` 和 `AppleIntelLpssI2CController.kext`, 再插卡进入Catalina
+7. 接下来就是安装wifi和蓝牙驱动
+
+## 理论安装步骤
+> 我根据我的安装步骤, 推导出来的, 还未实践过
+
+1. 拔掉 7559 自带wifi网卡
+2. 安装10.14.5, 进入系统
+3. 替换`clover.efi`为最新, 替换`whatevergreen`, `lilu`, `AppleALC`为最新
+4. 在启动参数里加 `-disablegfxfirmware`
+5. 进入系统设置更新catalina
+6. 更新完成之后, 先正常进入Catalina, 删掉`/System/Library/Extensions/`下的`AppleIntelLpssI2C.kext` 和 `AppleIntelLpssI2CController.kext`
+7. 关机, 插上1820A网卡
+8. 正常进入Catalina
+9. 安装驱动
+
+## 安装wifi驱动
+成功的插着1820A网卡, 进入到Catalina之后, 就是安装驱动了
+
+教程链接: https://blog.daliansky.net/DW1820A_BCM94350ZAE-driver-inserts-the-correct-posture.html
+
+大致步骤如下:
+
+1. 打开[hackintool](http://headsoft.com.au/download/mac/Hackintool.zip), 记下`PCI`->`BCM4350`中的设备地址
+
+    ![](https://raw.githubusercontent.com/fengwenhua/api-test/master/1573036550_20191106182723159_895524893.png)
+
+2. 将[AirportBrcmFixup](https://github.com/acidanthera/AirportBrcmFixup/releases)添加到`/EFI/CLOVER/kexts/Other`目录下
+3. `config.plist` 中添加引导参数： `brcmfx-country=#a`
+
+    ![](https://raw.githubusercontent.com/fengwenhua/api-test/master/1573036552_20191106182802892_1521478475.png)
+
+4. `Devices`->`Properties`添加：
+
+    - 在左侧`Devices`中添加刚刚记下来的设备地址：`PciRoot(0x0)/Pci(0x1c,0x5)/Pci(0x0,0x0)`
+
+    - 在右侧分别添加：
+
+        | Properties Key |          Properties Value          | Value Type |
+        | -------------- | ---------------------------------- | ---------- |
+        | AAPL,slot-name | WLAN                               | STRING     |
+        | compatible      | pci14e4,4353                       | STRING     |
+        | device_type     | Airport Extreme                    | STRING     |
+        | model           | DW1820A (BCM4350) 802.11ac Wireless | STRING     |
+        | name            | Airport                            | STRING     |
+
+    ![](https://raw.githubusercontent.com/fengwenhua/api-test/master/1573036547_20191106181742558_245505540.png)
+
+5. 重启电脑之后, wifi可用
+
+    ![](https://raw.githubusercontent.com/fengwenhua/api-test/master/1573036554_20191106182914024_1400944496.png)
+
+## 安装蓝牙驱动
+将 [DW1820A蓝牙专用程序](http://7.daliansky.net/DW1820A/DW1820A_BT_for_Catalina_v2.5.0.zip) 解压缩到`/EFI/CLOVER/kexts/Other`目录下，重启即可
+
 # 7559黑苹果-10.15
 ##  0x00 题外话
 前两天看到[黑果小兵](https://blog.daliansky.net/macOS-Catalina-10.15-19A583-Release-version-with-Clover-5093-original-image-Double-EFI-Version.html)已经将Catalina的安装包搞好了, 结果下了一天也没下完... ... 昨天白天上班没空, 晚上回去终于有时间搞搞了... ...
@@ -139,6 +228,8 @@
 然后替换本地`EFI/CLOVER`中的`CLOVERX64.efi`, 这样就完成了clover的升级了
 
 ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1570704020.png)
+
+> [2019.11.9更新] 这里可先删掉`/System/Library/Extensions/`下的`AppleIntelLpssI2C.kext` 和 `AppleIntelLpssI2CController.kext`, 以防止后面卡住进不去系统
 
 然后我们就可以打开`系统偏好设置`-> `软件更新`, 等一会, 它就会让我们更新Catalina, 直接下载更新, 驱动什么的等更新完Catalina之后再说
 

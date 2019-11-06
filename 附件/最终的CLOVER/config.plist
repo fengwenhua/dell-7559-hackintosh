@@ -262,7 +262,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>nv_disable=1 dart=0 kext-dev-mode=1 -lilubetaall -alcbeta</string>
+		<string>dart=0 nv_disable=1 -brcmfx-country=#a -alcbeta -lilubetaall -disablegfxfirmware kext-dev-mode=1</string>
 		<key>DefaultVolume</key>
 		<string>LastBootedVolume</string>
 		<key>NeverHibernate</key>
@@ -379,6 +379,22 @@
 			<key>ResetHDA</key>
 			<true/>
 		</dict>
+		<key>Properties</key>
+		<dict>
+			<key>PciRoot(0x0)/Pci(0x1c,0x5)/Pci(0x0,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>WLAN</string>
+				<key>compatible</key>
+				<string>pci14e4,4353</string>
+				<key>device_type</key>
+				<string>Airport Extreme</string>
+				<key>model</key>
+				<string>DW1820A (BCM4350) 802.11ac Wireless</string>
+				<key>name</key>
+				<string>Airport</string>
+			</dict>
+		</dict>
 		<key>USB</key>
 		<dict>
 			<key>AddClockID</key>
@@ -448,7 +464,7 @@
 			<true/>
 		</dict>
 		<key>Theme</key>
-		<string>Hackintosh_ID</string>
+		<string>Catalina</string>
 	</dict>
 	<key>Graphics</key>
 	<dict>
@@ -813,10 +829,10 @@
 		<key>CsrActiveConfig</key>
 		<string>0x67</string>
 		<key>MLB</key>
-		<string>C02624310GUDYWF8C</string>
+		<string>C02607102QXF9GYCB</string>
 		<key>ROM</key>
 		<data>
-		3yj8JLQR
+		bi8CgybP
 		</data>
 	</dict>
 	<key>SMBIOS</key>
@@ -832,7 +848,7 @@
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>BoardSerialNumber</key>
-		<string>C02624310GUDYWF8C</string>
+		<string>C02607102QXF9GYCB</string>
 		<key>BoardType</key>
 		<integer>10</integer>
 		<key>BoardVersion</key>
@@ -862,9 +878,9 @@
 		<key>ProductName-Comment</key>
 		<string>Using Haswell MacBookAir6,2 until Clover has support for Skylake identifiers</string>
 		<key>SerialNumber</key>
-		<string>C02RV7ZLGTFN</string>
+		<string>C02R80Z9GTFN</string>
 		<key>SmUUID</key>
-		<string>90EE56C2-C943-4B37-9D99-B25DCA24B411</string>
+		<string>B4D4DADE-6623-4337-88EC-961F4C8326CF</string>
 		<key>Trust</key>
 		<true/>
 		<key>Version</key>
@@ -875,7 +891,7 @@
 		<key>#BacklightLevel</key>
 		<integer>0</integer>
 		<key>CustomUUID</key>
-		<string>90EE56C2-C943-4B37-9D99-B25DCA24B411</string>
+		<string>B4D4DADE-6623-4337-88EC-961F4C8326CF</string>
 		<key>InjectKexts</key>
 		<string>Yes</string>
 	</dict>
