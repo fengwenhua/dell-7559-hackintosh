@@ -1,3 +1,28 @@
+# 2019.12.11 更新10.15.2
+更新完后, 修复声音即可, 以下是步骤:
+
+> 下载替换如下驱动的最新版:
+
+* [Clover](https://github.com/Dids/clover-builder/releases) 下载`5100`版本的`CLOVERX64.efi`
+* [WhateverGreen_v1.3.5](https://github.com/acidanthera/WhateverGreen/releases)
+* [Lilu_v1.4.0](https://github.com/acidanthera/Lilu/releases)
+* [AppleALC_v1.4.4](https://github.com/acidanthera/AppleALC/releases)
+
+然后直接更新
+
+更新完后, 没有声音, 先解锁SLE权限
+
+```
+sudo su
+sudo mount -uw /
+killall Finder
+```
+
+然后用附件的`耳机爆音修复`, 双击`install双击自动安装.command`, 修复完成后重启电脑即可
+
+![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1576033673_20191211110352592_522659038.png)
+
+---
 
 # 2019.11.9 更新10.15.1
 直接在系统设置那里更新
