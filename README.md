@@ -1,3 +1,42 @@
+# 2020.01.20 解决双显黑屏
+> 带着我的笔记本高高兴兴的回家, 结果发现, 插入显示器的时候, 笔记本内屏是黑屏的, 外接显示器正常, 于是赶紧上远景找一波解决方案, 原文链接: http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1834012&highlight=hdmi
+
+1. 进入`/System/Library/Extensions`目录，将`AppleGraphicsControl.kext` 拷贝到桌面。
+
+    ```
+    cd /System/Library/Extensions && cp -R AppleGraphicsControl.kext ~/Desktop
+    ```
+
+2. 使用 `Clover Configurator` 挂载EFI, 打开 `config.plist`, 进入`SMBIOS`栏, 复制`Board-ID`
+
+    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1579501469_20200120141624298_457252686.png)
+
+3. 用文本编辑器(比如我用sublime) 打开桌面的`AppleGraphicsControl.kext/Contents/PlugIns/AppleGraphicsDevicePolicy.kext/Contents/Info.plist`
+4. 搜索关键字`ConfigMap`, 在下面插入如下代码:
+
+    ```
+    <key>你的Board-ID</key>
+    <string>none</string>
+    ```
+
+    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1579501472_20200120141814828_1349404636.png)
+
+5. 修改完成后保存关闭. 然后依次输入以下命令解锁`S/L/E`权限
+
+    ```
+    sudo su
+    sudo mount -uw /
+    killall Finder
+    ```
+
+6. 打开`Kext Utility` 将改好的 `AppleGraphicsControl.kext` 拖进去, 写入驱动目录.
+
+    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1579501476_20200120142049032_2016404932.png)
+
+7. 重启, 问题解决.
+
+---
+
 # 2019.12.11 更新10.15.2
 更新完后, 修复声音即可, 以下是步骤:
 
