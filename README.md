@@ -620,7 +620,9 @@ cp /Users/用户名/Library/ssdtPRGen/ssdt.aml /Users/用户名/Desktop/SSDT.aml
 
 ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128211336.png)
 
-> ps: 装了这个软件之后, 发现可以用`Fn+F1`, `Fn+F2`调出小太阳了~~~
+> 以下是根据我的键盘修改的, 使用前需要加上`Fn`
+
+![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1579503602_20200120145642743_846262288.png)
 
 ## 0x11 背光保存
 * 删除`/EFI/CLOVER/drivers64UEFI/EmuVariableUefi-64.efi`,然后重启两遍以上,即可保存背光亮度
