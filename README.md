@@ -34,6 +34,7 @@
     ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1579501476_20200120142049032_2016404932.png)
 
 7. 重启, 问题解决.
+8. 注意: **必须是开机进入系统之后, 再插显示器!!**
 
 ---
 
