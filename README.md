@@ -620,9 +620,9 @@ cp /Users/用户名/Library/ssdtPRGen/ssdt.aml /Users/用户名/Desktop/SSDT.aml
 
 ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128211336.png)
 
-> 以下是根据我的键盘修改的, 使用前需要加上`Fn`
+> 以下是根据我的键盘修改的, 使用前需要加上`Fn`, 因为我笔记本直接按F1/F2/F3就是调节音量了, 所以, 将他们的功能键改成F1/F2/F3即可
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1579503602_20200120145642743_846262288.png)
+![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1579508410_20200120161958120_219435522.png)
 
 ## 0x11 背光保存
 * 删除`/EFI/CLOVER/drivers64UEFI/EmuVariableUefi-64.efi`,然后重启两遍以上,即可保存背光亮度
