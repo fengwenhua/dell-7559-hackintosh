@@ -1,54 +1,15 @@
-# 2020.01.30 暂停更新
-今天看了最新的 10.15.3 出来了, 差点就点了更新, 但是...
+# 2020.3.7 更新 10.15.3
+这几天打电话投诉了几波, (**很可能是教育局要求上要各大运营商保证各大学子能够正常上网课**), 今天我家恢复通网, 干就完了!!
 
-1. 家里没有 wifi, 全靠手机热点, 流量不够用
-2. 我那台 PC 在学校, 什么安装包都在那台 pc 上, 要是更新失败我就 gg 了
-3. 我的毕设和渗透环境都搭建好了, 要是一不小心搞崩了, 没有环境重装, 也不想重装
-4. 过完年我要去实习了, 要到五月份才回学校, 才能看到我的 pc
+先说结果, 升级完后, 修复声音和双显问题即可!!
 
-综上, 我决定无限期暂停更新本篇教程, 直到我搞完毕设, pc 在我身边以及我有空.
+修复步骤还是老规矩, 升级Clover, Lilu, WhateverGreen 和 AppleALC, 然后直接下载更新, 下载十分钟, 更新大概花了半个小时...
 
-各位大佬们要是成功更新了, 可以发个 pr 或者提个 issue!!
+![](https://gitee.com/fengwenhua/ImageBed/raw/master/1583589558_20200307215643807_1210450650.png)
 
-# 2020.01.20 解决双显黑屏
-> 带着我的笔记本高高兴兴的回家, 结果发现, 插入显示器的时候, 笔记本内屏是黑屏的, 外接显示器正常, 于是赶紧上远景找一波解决方案, 原文链接: http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1834012&highlight=hdmi
+顺便配个`screenfetch`命令的美图:
 
-1. 进入`/System/Library/Extensions`目录，将`AppleGraphicsControl.kext` 拷贝到桌面。
-
-    ```
-    cd /System/Library/Extensions && cp -R AppleGraphicsControl.kext ~/Desktop
-    ```
-
-2. 使用 `Clover Configurator` 挂载EFI, 打开 `config.plist`, 进入`SMBIOS`栏, 复制`Board-ID`
-
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1579501469_20200120141624298_457252686.png)
-
-3. 用文本编辑器(比如我用sublime) 打开桌面的`AppleGraphicsControl.kext/Contents/PlugIns/AppleGraphicsDevicePolicy.kext/Contents/Info.plist`
-4. 搜索关键字`ConfigMap`, 在下面插入如下代码:
-
-    ```
-    <key>你的Board-ID</key>
-    <string>none</string>
-    ```
-
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1579501472_20200120141814828_1349404636.png)
-
-5. 修改完成后保存关闭. 然后依次输入以下命令解锁`S/L/E`权限
-
-    ```
-    sudo su
-    sudo mount -uw /
-    killall Finder
-    ```
-
-6. 打开`Kext Utility` 将改好的 `AppleGraphicsControl.kext` 拖进去, 写入驱动目录.
-
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1579501476_20200120142049032_2016404932.png)
-
-7. 重启, 问题解决.
-8. 注意: **必须是开机进入系统之后, 再插显示器!!**
-
----
+![](https://gitee.com/fengwenhua/ImageBed/raw/master/1583589561_20200307215752372_931486519.png)
 
 # 2019.12.11 更新10.15.2
 更新完后, 修复声音即可, 以下是步骤:
@@ -73,8 +34,6 @@ killall Finder
 然后用附件的`耳机爆音修复`, 双击`install双击自动安装.command`, 修复完成后重启电脑即可
 
 ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1576033673_20191211110352592_522659038.png)
-
----
 
 # 2019.11.9 更新10.15.1
 直接在系统设置那里更新
@@ -135,12 +94,12 @@ killall Finder
 1. 打开[hackintool](http://headsoft.com.au/download/mac/Hackintool.zip), 记下`PCI`->`BCM4350`中的设备地址
 
     ![](https://raw.githubusercontent.com/fengwenhua/api-test/master/1573036550_20191106182723159_895524893.png)
-
+    
 2. 将[AirportBrcmFixup](https://github.com/acidanthera/AirportBrcmFixup/releases)添加到`/EFI/CLOVER/kexts/Other`目录下
 3. `config.plist` 中添加引导参数： `brcmfx-country=#a`
 
     ![](https://raw.githubusercontent.com/fengwenhua/api-test/master/1573036552_20191106182802892_1521478475.png)
-
+    
 4. `Devices`->`Properties`添加：
 
     - 在左侧`Devices`中添加刚刚记下来的设备地址：`PciRoot(0x0)/Pci(0x1c,0x5)/Pci(0x0,0x0)`
@@ -162,7 +121,11 @@ killall Finder
     ![](https://raw.githubusercontent.com/fengwenhua/api-test/master/1573036554_20191106182914024_1400944496.png)
 
 ## 安装蓝牙驱动
-将 [DW1820A蓝牙专用程序](http://7.daliansky.net/DW1820A/DW1820A_BT_for_Catalina_v2.5.0.zip) 解压缩到`/EFI/CLOVER/kexts/Other`目录下，重启即可
+将 [DW1820A蓝牙专用程序](http://7.daliansky.net/DW1820A/BT_for_DW1820A_Ver.2.zip) 解压缩到`/EFI/CLOVER/kexts/Other`目录下，重启即可
+
+于`config.plist`中添加引导参数：`bpr_probedelay=100 bpr_initialdelay=300 bpr_postresetdelay=300`
+
+蓝牙连接过程中若出现连接一下就断开的话, 关闭蓝牙->打开蓝牙->继续连接, 连接多几次就行
 
 # 7559黑苹果-10.15
 ##  0x00 题外话
@@ -387,7 +350,7 @@ killall Finder
     -[syn] Rename _DSM methods to XDSM
     -[Audio] Audio Layout 3
     -[bat] Dell Inspiron 15-7xxx
-    -[sys] Fix _WAK Arg0 v2
+    -[sys] Fix _WAK Arg0 v2 
     -[sys] Fix Mutex with non-zero SyncLevel
     -[sys] HPET Fix
     -[sys] IRQ fix
@@ -560,40 +523,40 @@ cp /Users/用户名/Library/ssdtPRGen/ssdt.aml /Users/用户名/Desktop/SSDT.aml
     原来的如下
 
     ```xml
-        <key>IOKitPersonalities</key>
-        <dict>
-            <key>Broadcom2045FamilyUSBBluetoothHCIController_D</key>
-            <dict>
-                <key>CFBundleIdentifier</key>
-                <string>com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport</string>
-                <key>IOClass</key>
-                <string>BroadcomBluetoothHostControllerUSBTransport</string>
-                <key>IOProviderClass</key>
-                <string>IOUSBHostDevice</string>
-                <key>idProduct</key>
+    	<key>IOKitPersonalities</key>
+    	<dict>
+    		<key>Broadcom2045FamilyUSBBluetoothHCIController_D</key>
+    		<dict>
+    			<key>CFBundleIdentifier</key>
+    			<string>com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport</string>
+    			<key>IOClass</key>
+    			<string>BroadcomBluetoothHostControllerUSBTransport</string>
+    			<key>IOProviderClass</key>
+    			<string>IOUSBHostDevice</string>
+    			<key>idProduct</key>
                <integer>33292</integer>
-                <key>idVendor</key>
-                <integer>1452</integer>
+    			<key>idVendor</key>
+    			<integer>1452</integer>
     ```
 
     修改后如下
 
     ```xml
-        <key>IOKitPersonalities</key>
-        <dict>
-            <key>Broadcom2045FamilyUSBBluetoothHCIController_D</key>
-            <dict>
-                <key>CFBundleIdentifier</key>
-                <string>com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport</string>
-                <key>IOClass</key>
-                <string>BroadcomBluetoothHostControllerUSBTransport</string>
-                <key>IOProviderClass</key>
-                <string>IOUSBHostDevice</string>
-                <key>idProduct</key>
-                <integer>2602</integer>
-                <key>idVendor</key>
-                <integer>32903</integer>
-            </dict>
+    	<key>IOKitPersonalities</key>
+    	<dict>
+    		<key>Broadcom2045FamilyUSBBluetoothHCIController_D</key>
+    		<dict>
+    			<key>CFBundleIdentifier</key>
+    			<string>com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport</string>
+    			<key>IOClass</key>
+    			<string>BroadcomBluetoothHostControllerUSBTransport</string>
+    			<key>IOProviderClass</key>
+    			<string>IOUSBHostDevice</string>
+    			<key>idProduct</key>
+    			<integer>2602</integer>
+    			<key>idVendor</key>
+    			<integer>32903</integer>
+    		</dict>
     ```
 
 4. 接下来打开一个终端, 输入如下命令, 先解锁`S/L/E`权限, 然后再将`Info.plist`复制替换原来的文件
@@ -720,6 +683,44 @@ https://www.penghubingzhou.cn/2019/01/06/VoodooI2C%20DSDT%20Edit/
 ```
 
 (这里先留个坑, 以后再搞)
+
+## 0x16 双显黑屏
+> 带着我的笔记本高高兴兴的回家, 结果发现, 插入显示器的时候, 笔记本内屏是黑屏的, 外接显示器正常, 于是赶紧上远景找一波解决方案, 原文链接: http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1834012&highlight=hdmi
+
+1. 进入`/System/Library/Extensions`目录，将`AppleGraphicsControl.kext` 拷贝到桌面。直接用下面的命令行会提示没有权限... sudo 也不行.... 搞不懂, 所以直接打开`访达(Finder)`, 按`Shift+Windows+G`, 然后粘贴路径`/System/Library/Extensions`, 然后搜索`AppleGraphicsControl.kext`, 将它拖到桌面.
+
+    ```
+    cd /System/Library/Extensions && cp -R AppleGraphicsControl.kext ~/Desktop
+    ```
+
+2. 使用 `Clover Configurator` 挂载EFI, 打开 `config.plist`, 进入`SMBIOS`栏, 复制`Board-ID`
+
+    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1579501469_20200120141624298_457252686.png)
+
+3. 用文本编辑器(比如我用sublime) 打开桌面的`AppleGraphicsControl.kext/Contents/PlugIns/AppleGraphicsDevicePolicy.kext/Contents/Info.plist`
+4. 搜索关键字`ConfigMap`, 在下面插入如下代码:
+
+    ```
+    <key>你的Board-ID</key>
+    <string>none</string>
+    ```
+
+    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1579501472_20200120141814828_1349404636.png)
+
+5. 修改完成后保存关闭. 然后依次输入以下命令解锁`S/L/E`权限
+
+    ```
+    sudo su
+    sudo mount -uw /
+    killall Finder
+    ```
+
+6. 打开`Kext Utility` 将改好的 `AppleGraphicsControl.kext` 拖进去, 写入驱动目录.
+
+    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1579501476_20200120142049032_2016404932.png)
+
+7. 重启, 问题解决.
+8. 注意: **必须是开机进入系统之后, 再插显示器!!**
 
 ## 最后
 * 附件什么的, 全部已上传至 github: https://github.com/fengwenhua/dell-7559-hackintosh
