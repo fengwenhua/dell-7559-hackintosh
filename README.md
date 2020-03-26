@@ -1,9 +1,9 @@
 # 2020.3.26 更新 10.15.4
 首先更新 clover 5107: http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1850202&extra=page%3D1%26filter%3Dauthor%26orderby%3Ddateline%26orderby%3Ddateline
 
-因为 lilu, whateverGreen 和 AppleALC 还没更新, 所以不管它们了, 然后直接系统更新.
+因为 lilu, whateverGreen 和 AppleALC 的 github 仓库还没更新, 所以不管它们了, 然后直接系统更新.
 
-更新完后修复音量, 双显黑屏, 稳~
+更新完后修复声音, 双显黑屏, 稳~
 
 ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1585192795_20200326111832988_1107625136.png)
 
