@@ -1,3 +1,14 @@
+# 2020.3.26 更新 10.15.4
+首先更新 clover 5107: http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1850202&extra=page%3D1%26filter%3Dauthor%26orderby%3Ddateline%26orderby%3Ddateline
+
+因为 lilu, whateverGreen 和 AppleALC 还没更新, 所以不管它们了, 然后直接系统更新.
+
+更新完后修复音量, 双显黑屏, 稳~
+
+![](https://gitee.com/fengwenhua/ImageBed/raw/master/1585192795_20200326111832988_1107625136.png)
+
+![](https://gitee.com/fengwenhua/ImageBed/raw/master/1585192797_20200326111933319_1467408556.png)
+
 # 2020.3.7 更新 10.15.3
 这几天打电话投诉了几波, (**很可能是教育局要求上要各大运营商保证各大学子能够正常上网课**), 今天我家恢复通网, 干就完了!!
 
