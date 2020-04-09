@@ -1,3 +1,12 @@
+# 2020.4.9 10.15.4 补充更新
+更新如下驱动: 
+
+* [WhateverGreen_v1.3.8](https://github.com/acidanthera/WhateverGreen/releases)
+* [Lilu_v1.4.3](https://github.com/acidanthera/Lilu/releases)
+* [AppleALC_v1.4.8](https://github.com/acidanthera/AppleALC/releases)
+
+然后直接更新, 更新完后修复声音即可.
+
 # 2020.3.26 更新 10.15.4
 首先更新 clover 5107: http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1850202&extra=page%3D1%26filter%3Dauthor%26orderby%3Ddateline%26orderby%3Ddateline
 
