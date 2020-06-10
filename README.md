@@ -1,3 +1,19 @@
+## 更新 10.15.5 2020-6-10
+更新替换如下驱动, 然后直接更新
+
+* [WhateverGreen_v1.4.0](https://github.com/acidanthera/WhateverGreen/releases)
+* [Lilu_v1.4.5](https://github.com/acidanthera/Lilu/releases)
+* [AppleALC_v1.5.0](https://github.com/acidanthera/AppleALC/releases)
+* [Clover](https://github.com/Dids/clover-builder/releases) 下载`5118`版本的`CLOVERX64.efi`
+
+> 我本人在更新过程中, 重启后发现没有识别 clover 引导, 直接进入了 Windows 系统, 在 bios 重新指定即可.
+
+更新完后一切正常, 啥也不用修复.
+
+![](https://gitee.com/fengwenhua/ImageBed/raw/master/1591773724_20200610152126824_1036585824.png)
+
+![](https://gitee.com/fengwenhua/ImageBed/raw/master/1591773727_20200610152200901_1510599504.png)
+
 # 2020.4.9 10.15.4 补充更新
 更新如下驱动: 
 
