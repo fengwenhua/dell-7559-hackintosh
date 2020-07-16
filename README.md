@@ -1,3 +1,18 @@
+## 更新 10.15.6 2020-7-16
+与更新 10.15.5 的操作完全一致, 我就不多写了
+
+更新替换如下驱动, 然后直接更新
+
+* [Clover](https://github.com/Dids/clover-builder/releases) 下载`5119`版本的`CLOVERX64.efi`
+
+> 我本人在更新过程中, 重启后发现没有识别 clover 引导, 直接进入了 Windows 系统, 进入windows, 使用 EasyUEFI 配置一下就行.
+
+更新完后修复一下声音即可.
+
+![](https://gitee.com/fengwenhua/ImageBed/raw/master/1594905893_20200716212418945_1647581563.png)
+
+![](https://gitee.com/fengwenhua/ImageBed/raw/master/1594905895_20200716212449986_1249184923.png)
+
 ## 更新 10.15.5 2020-6-10
 更新替换如下驱动, 然后直接更新
 
@@ -14,7 +29,25 @@
 
 ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1591773727_20200610152200901_1510599504.png)
 
-# 2020.4.9 10.15.4 补充更新
+## HDMI 外接屏幕睡眠唤醒后不主动亮屏-2020.4.14 
+
+启动参数添加 `igfxonln=1` 即可
+
+双显开机, 主屏幕黑屏: 启动项加`igfxagdc=0`(对我来说不起作用)
+
+ALCPlugFix 教程: https://github.com/daliansky/ALCPlugFix/blob/master/README.md
+
+耳麦插件 [ComboJack](https://github.com/hackintosh-stuff/ComboJack) (与ALCPlugFix二选一，需要把目录下的 VerbStub.kext 放到 /clover/kexts/other 目录里)
+
+更换声音方案，如果你目前是旧的ALCPlugFix方案，升级方法如下：
+
+1. 移除Clover/kexts/Other下面的CodecCommander，把ComboJack文件夹的VerbStub.kext放进去
+2. 执行两条命令 sudo rm /Library/LaunchAgents/good.win.ALCPlugFix.plist 和 sudo rm /usr/bin/ALCPlugFix
+3. 删除 CodecCommander.kext，把ComboJack_Installer文件夹的VerbStub.kext放进Clover/kexts/Other
+4. 终端运行 ComboJack_Installer/install.sh，重启
+5. 插入耳机的时候，VerbStub.kext会询问你插入的是耳机还是耳塞
+
+## 补充更新 10.15.4 - 2020.4.9 
 更新如下驱动: 
 
 * [WhateverGreen_v1.3.8](https://github.com/acidanthera/WhateverGreen/releases)
@@ -23,7 +56,7 @@
 
 然后直接更新, 更新完后修复声音即可.
 
-# 2020.3.26 更新 10.15.4
+## 更新 10.15.4-2020.3.26 
 首先更新 clover 5107: http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1850202&extra=page%3D1%26filter%3Dauthor%26orderby%3Ddateline%26orderby%3Ddateline
 
 因为 lilu, whateverGreen 和 AppleALC 的 github 仓库还没更新, 所以不管它们了, 然后直接系统更新.
@@ -34,7 +67,9 @@
 
 ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1585192797_20200326111933319_1467408556.png)
 
-# 2020.3.7 更新 10.15.3
+
+
+## 更新 10.15.3-2020.3.7 
 这几天打电话投诉了几波, (**很可能是教育局要求上要各大运营商保证各大学子能够正常上网课**), 今天我家恢复通网, 干就完了!!
 
 先说结果, 升级完后, 修复声音和双显问题即可!!
@@ -47,7 +82,7 @@
 
 ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1583589561_20200307215752372_931486519.png)
 
-# 2019.12.11 更新10.15.2
+## 更新10.15.2-2019.12.11 
 更新完后, 修复声音即可, 以下是步骤:
 
 > 下载替换如下驱动的最新版:
@@ -61,7 +96,7 @@
 
 更新完后, 没有声音, 先解锁SLE权限
 
-```
+```shell
 sudo su
 sudo mount -uw /
 killall Finder
@@ -69,36 +104,36 @@ killall Finder
 
 然后用附件的`耳机爆音修复`, 双击`install双击自动安装.command`, 修复完成后重启电脑即可
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1576033673_20191211110352592_522659038.png)
+![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798729_1576033673_20191211110352592_522659038.png)
 
-# 2019.11.9 更新10.15.1
+## 更新10.15.1-2019.11.9 
 直接在系统设置那里更新
 
 更新完成之后, 发现声音没了, 蓝牙, wifi, 小太阳正常
 
 修复声音: 更新lilu applealc whatevergreen到最新版本即可
 
-# 2019.11.1 更换网卡1820A
+## 更换网卡1820A-2019.11.1 
 最近拿到了心目中的offer, 感觉飘飘然, 于是乎, 某宝花了70大洋, 干了一个1820A, 以下就是安装教程
 
-## 注意
+### 注意
 如果你系统还没安装好, 就直接插上1820A网卡, 可能会一直卡住, 无法进入安装界面... 所以只能拔卡了~~~
 
 如果你已经装好系统Catalina了, 更换成1820A网卡, 你可能会遇到下面两种错误
 
-### Begin Gfx firmware load process 错误
+#### Begin Gfx firmware load process 错误
 ```
 在启动参数里加 -disablegfxfirmware 就好了
 ```
 
-![](https://raw.githubusercontent.com/fengwenhua/api-test/master/1573036545_20191020085411554_977482903.png)
+![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798724_1573036545_20191020085411554_977482903.png)
 
 
-### appleintellpssi2ccontroller ftimerservicematching timed out 错误
+#### appleintellpssi2ccontroller ftimerservicematching timed out 错误
 
 删掉`/System/Library/Extensions/`下的`AppleIntelLpssI2C.kext` 和 `AppleIntelLpssI2CController.kext`
 
-## 我的安装步骤
+### 我的安装步骤
 1. 安装10.14.5, 进入系统
 2. 替换`clover.efi`为最新, 替换`whatevergreen`, `lilu`, `AppleALC`为最新
 3. 删掉`/System/Library/Extensions/`下的`AppleIntelLpssI2C.kext` 和 `AppleIntelLpssI2CController.kext`
@@ -107,7 +142,7 @@ killall Finder
 6. 更新完后, 如果还遇到上面提到的第二种错误, 则拔卡, 正常进入Catalina, 再删一遍`/System/Library/Extensions/`下的`AppleIntelLpssI2C.kext` 和 `AppleIntelLpssI2CController.kext`, 再插卡进入Catalina
 7. 接下来就是安装wifi和蓝牙驱动
 
-## 理论安装步骤
+### 理论安装步骤
 > 我根据我的安装步骤, 推导出来的, 还未实践过
 
 1. 拔掉 7559 自带wifi网卡
@@ -120,7 +155,7 @@ killall Finder
 8. 正常进入Catalina
 9. 安装驱动
 
-## 安装wifi驱动
+### 安装wifi驱动
 成功的插着1820A网卡, 进入到Catalina之后, 就是安装驱动了
 
 教程链接: https://blog.daliansky.net/DW1820A_BCM94350ZAE-driver-inserts-the-correct-posture.html
@@ -129,12 +164,12 @@ killall Finder
 
 1. 打开[hackintool](http://headsoft.com.au/download/mac/Hackintool.zip), 记下`PCI`->`BCM4350`中的设备地址
 
-    ![](https://raw.githubusercontent.com/fengwenhua/api-test/master/1573036550_20191106182723159_895524893.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798726_1573036550_20191106182723159_895524893.png)
     
 2. 将[AirportBrcmFixup](https://github.com/acidanthera/AirportBrcmFixup/releases)添加到`/EFI/CLOVER/kexts/Other`目录下
 3. `config.plist` 中添加引导参数： `brcmfx-country=#a`
 
-    ![](https://raw.githubusercontent.com/fengwenhua/api-test/master/1573036552_20191106182802892_1521478475.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798727_1573036552_20191106182802892_1521478475.png)
     
 4. `Devices`->`Properties`添加：
 
@@ -150,20 +185,19 @@ killall Finder
         | model           | DW1820A (BCM4350) 802.11ac Wireless | STRING     |
         | name            | Airport                            | STRING     |
 
-    ![](https://raw.githubusercontent.com/fengwenhua/api-test/master/1573036547_20191106181742558_245505540.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798725_1573036547_20191106181742558_245505540.png)
 
 5. 重启电脑之后, wifi可用
 
-    ![](https://raw.githubusercontent.com/fengwenhua/api-test/master/1573036554_20191106182914024_1400944496.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798728_1573036554_20191106182914024_1400944496.png)
 
-## 安装蓝牙驱动
+### 安装蓝牙驱动
 将 [DW1820A蓝牙专用程序](http://7.daliansky.net/DW1820A/BT_for_DW1820A_Ver.2.zip) 解压缩到`/EFI/CLOVER/kexts/Other`目录下，重启即可
 
 于`config.plist`中添加引导参数：`bpr_probedelay=100 bpr_initialdelay=300 bpr_postresetdelay=300`
 
 蓝牙连接过程中若出现连接一下就断开的话, 关闭蓝牙->打开蓝牙->继续连接, 连接多几次就行
 
-# 7559黑苹果-10.15
 ##  0x00 题外话
 前两天看到[黑果小兵](https://blog.daliansky.net/macOS-Catalina-10.15-19A583-Release-version-with-Clover-5093-original-image-Double-EFI-Version.html)已经将Catalina的安装包搞好了, 结果下了一天也没下完... ... 昨天白天上班没空, 晚上回去终于有时间搞搞了... ...
 
@@ -195,55 +229,55 @@ killall Finder
 
 ## 0x02 最终的效果
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1570704001.png)
+![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798676_1570704001.png)
 
 1. 声卡完美, 耳机自动切换, 除了插入的时候有电流声... ... 笔记本快捷键: `F1`静音,`F2`调低声音和`F3`调高声音
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171125.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798753_20190330171125.png)
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128211546.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798753_20190128211546.png)
 
 2. 背光可调,也就是所谓的小太阳,笔记本快捷键`Fn+F1`和`Fn+F2`
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128211525.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798753_20190128211525.png)
 
 3. USB3.0驱动成功
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1570704004.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798678_1570704004.png)
 
 4. 蓝牙可用,可关闭打开
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171149.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798754_20190330171149.png)
 
 5. 睡眠可用,电量正常显示
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171224.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798754_20190330171224.png)
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128211908.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798753_20190128211908.png)
 
 6. 摄像头可用,使用mac自带的`Photo Booth`检测
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171234.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798755_20190330171234.png)
 
 7. 独显已经屏蔽
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171243.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798755_20190330171243.png)
 
 8. 可变频,测试软件[Intel Power Gadget](https://software.intel.com/en-us/articles/intel-power-gadget-20)和[cpu-s](http://bbs.pcbeta.com/viewthread-1698338-1-1.html),这两个软件我已经下载好放在附件中了
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1570704007.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798679_1570704007.png)
 
 
 9. iMessage可用, FaceTime没用过, 但是应该也行. **记住, 如果你想成功使用iMessage的话, 千万先别登录Apple ID**
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1570704010.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798680_1570704010.png)
 
 
 ## 0x03 BIOS准备
 1. 如果cpu是i5的,则需要去官网下载1.0.1的BIOS版本刷入,我是i7,所以不用管
 2. 更改BIOS设置如下
 
-```
+```config
  - 恢复BIOS默认设置
  - AHCI mode 选择 SATA
  - 关闭 VT for direct I/O
@@ -258,17 +292,17 @@ killall Finder
 1. 下载macOS Mojave镜像: [【黑果小兵】macOS Mojave 10.14.5 18F132 正式版 with Clover 4928原版镜像](https://blog.daliansky.net/macOS-Mojave-10.14.5-18F132-official-version-with-Clover-4928-original-image.html)
 2. 检查下载的系统的md5是否是下载链接处提供的`371d9145484beaf0795d6b7d0d569fc3`
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1570704013.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798712_1570704013.png)
 
     * windows下,使用`certutil`命令
 
-        ```
+        ```shell
         certutil -hashfile 系统镜像 MD5
         ```
 
     * mac下使用`md5`
 
-        ```
+        ```shell
         md5 系统镜像
         ```
 
@@ -276,17 +310,17 @@ killall Finder
 
     * 使用`transmac`将镜像写入U盘:先选择`Format Disk for Mac`格式化为Mac格式,然后选择`Restore with Disk Image`将镜像写入U盘
 
-        ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128202859.png)
+        ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798751_20190128202859.png)
 
-        ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128203110.png)
+        ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798752_20190128203110.png)
 
     * 使用`balenaEtcher`将镜像写入U盘:傻瓜式操作,选择下载的系统镜像,选择U盘,然后点击`Flash`,等待即可
 
-        ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128203143.png)
+        ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798752_20190128203143.png)
 
 4. 在windows下,使用`Diskgenius`,mac下使用`Clover Configurator`挂载U盘的EFI分区,我们需要修改一下`config.plist`,将原来默认的`config.plist`重命名成`config_bak.plist`,然后找到有`530`字眼的config文件,将其重命名为`config.plist`
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171319.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798756_20190330171319.png)
 
     > ps:如果你的配置以及Bios版本和我的一致,先删除U盘中的`CLOVERE`,然后你可以直接将附件中的`最终的CLOVER`重命名成`CLOVER`,然后放到U盘的EFI分区里面,当然,不能保证可以进入系统!最好还是跟我教程,自己一步步安装!
 
@@ -299,11 +333,11 @@ killall Finder
 
 然后去`https://github.com/Dids/clover-builder/releases`下载5093版本的`CLOVERX64.efi`
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1570704017.png)
+![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798713_1570704017.png)
 
 然后替换本地`EFI/CLOVER`中的`CLOVERX64.efi`, 这样就完成了clover的升级了
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1570704020.png)
+![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798714_1570704020.png)
 
 > [2019.11.9更新] 这里可先删掉`/System/Library/Extensions/`下的`AppleIntelLpssI2C.kext` 和 `AppleIntelLpssI2CController.kext`, 以防止后面卡住进不去系统
 
@@ -318,19 +352,19 @@ killall Finder
 
     原来的如下:
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171331.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798757_20190330171331.png)
 
     修改后如下:  下面修改或者增加的驱动, 去`最终的clover`那里找. 注意, 其中[AppleALC_v1.4.2](https://github.com/acidanthera/AppleALC/releases), [WhateverGreen_v1.3.3](https://github.com/acidanthera/WhateverGreen/releases), [Lilu_v1.3.8](https://github.com/acidanthera/Lilu/releases)我已经从官网升级到了最新版, 都放在了`最终的clover`上
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1570704023.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798715_1570704023.png)
 
 2. 让`Other`下的驱动可以生效, 打开`/EFI/CLOVER/config.plist`,在`System Parameters->Inject Kexts`改成`Yes`,然后保存
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171350.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798757_20190330171350.png)
 
 3. 移除键鼠标驱动, 防止与`Other`下的鼠标驱动`VoodooPS2Controller_v1.9.2.kext`冲突, 终端输入：
 
-    ```
+    ```shell
     sudo rm -rf /System/Library/Extensions/AppleACPIPS2Nub.kext
     ```
 
@@ -343,24 +377,24 @@ killall Finder
 1. 开机选择Mac图标,按下`F4`，所需文件会自动出现在`EFI/Clover/ACPI/origin`文件夹
 2. 使用`Clover Configurator`加载引导分区EFI,如下图
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127220355.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798735_20190127220355.png)
 
 3. 将`EFI/Clover/ACPI/`下的`origin`文件夹复制到桌面
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171447.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798758_20190330171447.png)
 
 
 4. 复制附件中的`iasl`和`refs`文件至桌面的`origin`文件夹
 5. 终端输入:
 
-    ```
+    ```shell
     cd ~/Desktop/origin
     sudo cp iasl /usr/bin
     iasl -da -dl -fe refs.txt DSDT.aml SSDT*.aml
     ```
      将会有`****.dsl`文件创建于`origin`文件夹,如下图
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171500.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798759_20190330171500.png)
 
 ### DSDT文件制作
 > 注意每改一下,都要`Compile`一下,查看是否有error,修复它,不管warning
@@ -368,21 +402,21 @@ killall Finder
 1. 使用`MaciASL.app`打开`DSDT.dsl`文件
 2. 点击`Compile`,出现4个error,都是`PARSEOP_EXP_MULTIPLY`错误,双击跳转到error位置,删掉这四行即可,如果遇到其他错误自行百度
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127220439.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798736_20190127220439.png)
 
 3. 查找`HECI` 用`IMEI`替代;查找`HDAS` 用`HDEF`替代,
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127220532.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798738_20190127220532.png)
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127220541.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798739_20190127220541.png)
 
     然后再`Compile`一下,不用管`Warnings`,没有`Errors`即可
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127220603.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798740_20190127220603.png)
 
 4. 点击`Patch`,在`RehabMan Laptop`下,查找到以下项目，单击后按`Apply`
 
-    ```
+    ```config
     -[syn] Rename _DSM methods to XDSM
     -[Audio] Audio Layout 3
     -[bat] Dell Inspiron 15-7xxx
@@ -400,24 +434,24 @@ killall Finder
 
         > 我放在附件中的`MaciASL`是最新版本的,已经包含了`RehabMan Laptop`的源,如下图.如果你发现点击`Patch`之后**显示空白**,则说明网络不好,要么等一会,要么科学上网.
 
-        ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128185836.png)
+        ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798751_20190128185836.png)
 
-        ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127220635.png)
+        ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798741_20190127220635.png)
 
     * 选择`[syn] Rename _DSM methods to XDSM`之后,等一会,然后点击`Apply`,然后再等一会,指导右边上下两个框框都没有东西了,说明替换成功
 
         > ps:这里多说一句,如果你是程序员的话,应该明白,这个本质就是通过正则匹配,然后替换成指定内容而已,当然这个具体为什么替换成这些内容,只有问RehabMan大佬了
 
-        ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127220653.png)
+        ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798742_20190127220653.png)
 
 5. 查找`layout`，并将`3`替换为`13`
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127220704.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798743_20190127220704.png)
 
 6. 点击`Compile`,不管Warnings,有error就修复
 7. 接下来屏蔽独显： 开头处添加
 
-    ```
+    ```config
     External (_SB_.PCI0.PEG0.PEGP._PS3, MethodObj)
     External (_SB_.PCI0.PEG0.PEGP._PS0, MethodObj)
     External (_SB_.PCI0.PEG0.PEGP._OFF, MethodObj)
@@ -426,11 +460,11 @@ killall Finder
     External (_SB_.PCI0.PEG0.PEGP.SGON, MethodObj)
     ```
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127220725.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798744_20190127220725.png)
 
     搜索`_WAK`，并在其之前添加
 
-    ```
+    ```config
     Method (M_ON, 0, NotSerialized)
         {
             If (CondRefOf (\_SB_.PCI0.PEG0.PEGP._ON))
@@ -466,64 +500,64 @@ killall Finder
 
     如下图
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127220755.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798745_20190127220755.png)
 
     搜索`_WAK`，添加`M_OF()`,如下图
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127220811.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798746_20190127220811.png)
 
     搜索`_PTS`，添加`M_ON()`,如下图
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127220833.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798747_20190127220833.png)
 
     搜索`Method (_INI, 0, Serialized)`，并在图示位置添加`M_OF()`
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127220845.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798748_20190127220845.png)
 
 8. 点击`Compile`，检查有无错误，无错误则选择`File`->`Save as...`->`ACPI Machine Language Binary`格式保存至桌面，有错误则从头再来
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171516.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798759_20190330171516.png)
 
 9. 拷贝制作的`DSDT.aml`文件至引导分区`EFI/Clover/ACPI/patched`
 
 ### SSDT-5.aml制作
 1. 打开`SSDT-5.dsl`，先点`Compile`,没有error之后,再点击`patch`，选择`[igpu] Rename GFX0 to IGPU`  然后点击`Apply`,同理另存为`ACPI Machine Language Binary`格式保存至**桌面,**如下两个图
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171523.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798760_20190330171523.png)
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127220918.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798748_20190127220918.png)
 
 2. 拷贝制作的`SSDT-5.aml`文件和附件中`SSDT-PNLF.aml`、`SSDT-UIAC.aml`至引导分区`EFI/Clover/ACPI/patched`
 
 ### 制作SSDT.aml
 打开终端,输入下方两条指令
 
-```
+```shell
 curl -o ssdtPRGen.sh https://raw.githubusercontent.com/Piker-Alpha/ssdtPRGen.sh/Beta/ssdtPRGen.sh
 chmod +x ssdtPRGen.sh
 ```
 
 * 如果是i7 6700HQ使用
 
-    ```
+    ```shell
     ./ssdtPRGen.sh -p 'i7-6700HQ' -f 2600 -turbo 3500
     ```
 
 * 如果是i5 6300HQ使用
 
-    ```
+    ```shell
     ./ssdtPRGen.sh -p 'i5-6300HQ' -f 2300 -turbo 3200
     ```
 
 根据提示选择`y`、`n`
 
-```
+```shell
 cp /Users/用户名/Library/ssdtPRGen/ssdt.aml /Users/用户名/Desktop/SSDT.aml
 ```
 
 同理把`SSDT.aml`拷贝至引导分区`EFI/Clover/ACPI/patched` 至此你的`patched`文件夹应包含以下内容
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171537.png)
+![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798760_20190330171537.png)
 
 然后重启即可
 
@@ -532,27 +566,27 @@ cp /Users/用户名/Library/ssdtPRGen/ssdt.aml /Users/用户名/Desktop/SSDT.aml
 
 1. `关于本机`->`系统报告`->找到蓝牙的供应商ID和产品ID
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127155708.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798734_20190127155708.png)
 
-    ```
+    ```config
     供应商 ID：   0x8087
     产品 ID：    0x0A2A
     ```
 
 2. 转换为10进制
 
-    ```
+    ```config
     供应商 ID：    32903
     产　品 ID：    2602
     ```
 
 3. 打开Finder, 同时按下`windows+Shift+G`或者`Alt+Shift+G`, 在弹出的框框输入 `/System/Library/Extensions/IOBluetoothFamily.kext/Contents/PlugIns/BroadcomBluetoothHostControllerUSBTransport.kext/Contents/`, 点击`前往`
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1570704027.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798716_1570704027.png)
 
     将`Info.plist`文件拖到桌面, 编辑它
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1570704031.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798716_1570704031.png)
 
     搜索 `Broadcom2045FamilyUSBBluetoothHCIController_D`, 然后修改`idVendor`值为`32903`和`idProduct`的值为`2602`如下：
 
@@ -597,7 +631,7 @@ cp /Users/用户名/Library/ssdtPRGen/ssdt.aml /Users/用户名/Desktop/SSDT.aml
 
 4. 接下来打开一个终端, 输入如下命令, 先解锁`S/L/E`权限, 然后再将`Info.plist`复制替换原来的文件
 
-    ```
+    ```shell
     sudo su
     sudo mount -uw /
     killall Finder
@@ -605,11 +639,11 @@ cp /Users/用户名/Library/ssdtPRGen/ssdt.aml /Users/用户名/Desktop/SSDT.aml
 
 5. 使用`Kext Utility`修复权限和重建缓存即可
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127155800.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798766_20200530083051154_1013818181.png)
 
 6. 效果如下,可开启,可关闭
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127224543.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798751_20190127224543.png)
 
 
 ## 0x09 耳机爆音修复
@@ -617,28 +651,28 @@ cp /Users/用户名/Library/ssdtPRGen/ssdt.aml /Users/用户名/Desktop/SSDT.aml
 2. 先用上面提到的解锁`S/L/E`权限的命令, 然后双击`install双击自动安装.command`
 3. 用`Clover Configurator`打开`EFI/Clover/config.plist`,切换到`Boot`,在`Custom Flags`添加`-lilubetaall -alcbeta`
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127221156.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798749_20190127221156.png)
 
 4. 切换到`Devices`标签,Audio下的`Inject`选择`13`
     > 其实这一步操不操作没关系,因为我们已经在DSDT.aml中指定了
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190127221357.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798750_20190127221357.png)
 
 5. 重启
 
 ## 0x10 windows和alt功能交换
 如果发现笔记本自带键盘`windows`键和`alt`键的功能交换了,则需要用到[Karabiner](https://pqrs.org/osx/karabiner/) 交换`windows`和`alt`的功能
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190128211336.png)
+![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798752_20190128211336.png)
 
 > 以下是根据我的键盘修改的, 使用前需要加上`Fn`, 因为我笔记本直接按F1/F2/F3就是调节音量了, 所以, 将他们的功能键改成F1/F2/F3即可
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1579508410_20200120161958120_219435522.png)
+![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798733_1579508410_20200120161958120_219435522.png)
 
 ## 0x11 背光保存
 * 删除`/EFI/CLOVER/drivers64UEFI/EmuVariableUefi-64.efi`,然后重启两遍以上,即可保存背光亮度
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190330171552.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798761_20190330171552.png)
 
 ## 0x12 其他的驱动
 * 将`其他的驱动`里面的驱动拖到`/EFI/CLOVER/kexts/Other`里面
@@ -654,7 +688,7 @@ cp /Users/用户名/Library/ssdtPRGen/ssdt.aml /Users/用户名/Desktop/SSDT.aml
 
 * 这个给出`蓝牙驱动`和`FakePCIID系列`的下载地址
 
-    ```
+    ```config
     https://bitbucket.org/RehabMan/os-x-brcmpatchram/downloads/
     https://bitbucket.org/RehabMan/os-x-fake-pci-id/downloads/
     ```
@@ -664,43 +698,43 @@ cp /Users/用户名/Library/ssdtPRGen/ssdt.aml /Users/用户名/Desktop/SSDT.aml
 ## 0x13 usb网卡
 之前搞到一个802.11 的usb网卡, 我的笔记本现在用不了wifi(主要是穷...), 想着大佬肯定有驱动, 结果一找, 果然有, 装好后直接可以用了, usb网卡驱动地址: https://github.com/chris1111/Wireless-USB-Adapter-Clover/releases
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190612200855.png)
+![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798762_20190612200855.png)
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190612200909.png)
+![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798765_20190612200909.png)
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/20190612200921.png)
+![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798765_20190612200921.png)
 
 ## 0x14 iMessage的修复
 注意: 如果到这个时候, 你还没有登录任何账号, 那么你的成功机会应该会蛮大的~~
 
 找到Clover的`config.plist`, 使用`Clover Configurator`打开, 选择左侧`SMBIOS`, 先勾选`Trust`, 然后使用右侧上下箭头选择适合自己的SMBIOS型号, 这里我选的是`MacBookPro13,3`, 如下图
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1570704034.png)
+![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798717_1570704034.png)
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1570704037.png)
+![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798718_1570704037.png)
 
 复制 `Serial Number`前往 [Apple官网查询序列号 ](https://checkcoverage.apple.com/cn/zh), 如果显示有购买日期和机型等保修信息, 说明这个序列号别人在用, 点击 `Generate New`生成新的Serial Number, 直到出现下图提示为止
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1570704042.png)
+![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798719_1570704042.png)
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1570704045.png)
+![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798720_1570704045.png)
 
 
 选择 Clover Configurator 左侧 `System Parameters`, 生成一个UUID
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1570704048.png)
+![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798721_1570704048.png)
 
 复制生成等UUID粘贴到`SMBIOS`的 `SmUUID` 里, 使用Win+s保存
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1570704051.png)
+![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798722_1570704051.png)
 
 复制`SMBIOS`里的 `Board Serial Number`, 粘贴到Clover Configurator 左侧 `Rt Variables`的 `MLB` 里, 保存之后, 点击ROM右边的`Generate`, 确保下方三码和自己刚刚操作生成的一致, 然后保存重启即可
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1570704055.png)
+![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798722_1570704055.png)
 
 
 
-![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1570704058.png)
+![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798723_1570704058.png)
 
 重启之后, 可以打开`系统偏好设置`, 来登录自己的Apple ID了, 登录完成之后, 打开IMessage看看, 应该可以使用了~~~
 
@@ -712,7 +746,7 @@ https://www.penghubingzhou.cn/2019/01/06/VoodooI2C%20DSDT%20Edit/
 
 现在的话, 大家先把`/EFI/CLOVER/kexts/Other`下的`VoodooPS2Controller_v1.9.2.kext`换成`ApplePS2SmartTouchPad.kext`, 这样的话, 触摸板就可以简单使用了
 
-```
+```config
 单指单击相当于鼠标左键
 两指滚动相当于鼠标滚轮
 三指点击相当于鼠标右键
@@ -725,27 +759,27 @@ https://www.penghubingzhou.cn/2019/01/06/VoodooI2C%20DSDT%20Edit/
 
 1. 进入`/System/Library/Extensions`目录，将`AppleGraphicsControl.kext` 拷贝到桌面。直接用下面的命令行会提示没有权限... sudo 也不行.... 搞不懂, 所以直接打开`访达(Finder)`, 按`Shift+Windows+G`, 然后粘贴路径`/System/Library/Extensions`, 然后搜索`AppleGraphicsControl.kext`, 将它拖到桌面.
 
-    ```
+    ```shell
     cd /System/Library/Extensions && cp -R AppleGraphicsControl.kext ~/Desktop
     ```
 
 2. 使用 `Clover Configurator` 挂载EFI, 打开 `config.plist`, 进入`SMBIOS`栏, 复制`Board-ID`
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1579501469_20200120141624298_457252686.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798730_1579501469_20200120141624298_457252686.png)
 
 3. 用文本编辑器(比如我用sublime) 打开桌面的`AppleGraphicsControl.kext/Contents/PlugIns/AppleGraphicsDevicePolicy.kext/Contents/Info.plist`
 4. 搜索关键字`ConfigMap`, 在下面插入如下代码:
 
-    ```
+    ```xml
     <key>你的Board-ID</key>
     <string>none</string>
     ```
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1579501472_20200120141814828_1349404636.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798731_1579501472_20200120141814828_1349404636.png)
 
 5. 修改完成后保存关闭. 然后依次输入以下命令解锁`S/L/E`权限
 
-    ```
+    ```shell
     sudo su
     sudo mount -uw /
     killall Finder
@@ -753,7 +787,7 @@ https://www.penghubingzhou.cn/2019/01/06/VoodooI2C%20DSDT%20Edit/
 
 6. 打开`Kext Utility` 将改好的 `AppleGraphicsControl.kext` 拖进去, 写入驱动目录.
 
-    ![](https://raw.githubusercontent.com/fengwenhua/ImageBed/master/1579501476_20200120142049032_2016404932.png)
+    ![](https://gitee.com/fengwenhua/ImageBed/raw/master/1590798732_1579501476_20200120142049032_2016404932.png)
 
 7. 重启, 问题解决.
 8. 注意: **必须是开机进入系统之后, 再插显示器!!**
