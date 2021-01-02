@@ -1,0 +1,174 @@
+7:205  2:184  Found BIOS RSDP at FD000
+7:205  0:000  Printing ACPI tables from RSDP FD000 ...
+7:205  0:000   FD000: 'RSD PTR ', Rev: 2 (Acpi 2.0 or newer), Len: 36
+7:205  0:000    (Xsdt: 772BA0A8, Rsdt: 772BA028)
+7:205  0:000    772BA0A8: 'XSDT', 'QA09', Rev: 1, Len: 212
+7:205  0:000    772BA028: 'RSDT', 'QA09', Rev: 1, Len: 124
+7:205  0:000    Tables in Xsdt: 22
+7:205  0:000    0. 772D3708: 'FACP', 'QA09', Rev: 5, Len: 268
+7:205  0:000        (Dsdt: 772BA210, Facs: 77AC4F80, XDsdt: 772BA210, XFacs: 0)
+7:205  0:000        772BA210: 'DSDT', 'QA09', Rev: 2, Len: 103668
+7:205  0:000        77AC4F80: 'FACS', Ver: 2, Len: 64
+7:205  0:000    1. 772D3818: 'APIC', 'QA09', Rev: 3, Len: 188
+7:205  0:000    2. 772D38D8: 'FPDT', 'QA09', Rev: 1, Len: 68
+7:205  0:000    3. 772D3920: 'FIDT', 'QA09', Rev: 1, Len: 156
+7:205  0:000    4. 772D39C0: 'MCFG', 'QA09', Rev: 1, Len: 60
+7:205  0:000    5. 772D3A00: 'HPET', 'QA09', Rev: 1, Len: 56
+7:205  0:000    6. 772D3A38: 'SSDT', 'SataTabl', Rev: 1, Len: 789
+7:205  0:000    7. 772D3D50: 'LPIT', 'SKL', Rev: 1, Len: 148
+7:205  0:000    8. 772D3DE8: 'SSDT', 'sensrhub', Rev: 2, Len: 584
+7:205  0:000    9. 772D4030: 'SSDT', 'PtidDevc', Rev: 2, Len: 3793
+7:205  0:000    10. 772D4F08: 'SSDT', 'Ther_Rvp', Rev: 2, Len: 3141
+7:205  0:000    11. 772D5B50: 'DBGP', '', Rev: 1, Len: 52
+7:205  0:000    12. 772D5B88: 'DBG2', '', Rev: 0, Len: 84
+7:205  0:000    13. 772D5BE0: 'SSDT', 'DptfTabl', Rev: 2, Len: 13782
+7:205  0:000    14. 772D91B8: 'BOOT', 'QA09', Rev: 1, Len: 40
+7:205  0:000    15. 772D91E0: 'SLIC', 'QA09', Rev: 1, Len: 374
+7:205  0:000    16. 772D9358: 'SSDT', 'SaSsdt', Rev: 2, Len: 21430
+7:205  0:000    17. 772DE710: 'UEFI', '', Rev: 1, Len: 66
+7:205  0:000    18. 772DE758: 'MSDM', 'QA09', Rev: 3, Len: 85
+7:205  0:000    19. 772DE7B0: 'SSDT', 'CpuSsdt', Rev: 2, Len: 3672
+7:205  0:000    20. 772DF608: 'SSDT', 'SgPeg', Rev: 2, Len: 209
+7:205  0:000    21. 772DF6E0: 'SSDT', 'OptTabl', Rev: 1, Len: 6655
+7:205  0:000    Tables in Rsdt: 22
+7:205  0:000    0. 772BA188: 'FACP', 'QA09', Rev: 2, Len: 132
+7:205  0:000        (Dsdt: 772BA210, Facs: 77AC4F40)
+7:205  0:000        772BA210: 'DSDT', 'QA09', Rev: 2, Len: 103668
+7:205  0:000        77AC4F40: 'FACS', Ver: 0, Len: 64
+7:205  0:000    1. 772D3818: 'APIC', 'QA09', Rev: 3, Len: 188
+7:205  0:000    2. 772D38D8: 'FPDT', 'QA09', Rev: 1, Len: 68
+7:205  0:000    3. 772D3920: 'FIDT', 'QA09', Rev: 1, Len: 156
+7:205  0:000    4. 772D39C0: 'MCFG', 'QA09', Rev: 1, Len: 60
+7:205  0:000    5. 772D3A00: 'HPET', 'QA09', Rev: 1, Len: 56
+7:205  0:000    6. 772D3A38: 'SSDT', 'SataTabl', Rev: 1, Len: 789
+7:205  0:000    7. 772D3D50: 'LPIT', 'SKL', Rev: 1, Len: 148
+7:205  0:000    8. 772D3DE8: 'SSDT', 'sensrhub', Rev: 2, Len: 584
+7:205  0:000    9. 772D4030: 'SSDT', 'PtidDevc', Rev: 2, Len: 3793
+7:205  0:000    10. 772D4F08: 'SSDT', 'Ther_Rvp', Rev: 2, Len: 3141
+7:205  0:000    11. 772D5B50: 'DBGP', '', Rev: 1, Len: 52
+7:205  0:000    12. 772D5B88: 'DBG2', '', Rev: 0, Len: 84
+7:205  0:000    13. 772D5BE0: 'SSDT', 'DptfTabl', Rev: 2, Len: 13782
+7:205  0:000    14. 772D91B8: 'BOOT', 'QA09', Rev: 1, Len: 40
+7:205  0:000    15. 772D91E0: 'SLIC', 'QA09', Rev: 1, Len: 374
+7:205  0:000    16. 772D9358: 'SSDT', 'SaSsdt', Rev: 2, Len: 21430
+7:205  0:000    17. 772DE710: 'UEFI', '', Rev: 1, Len: 66
+7:205  0:000    18. 772DE758: 'MSDM', 'QA09', Rev: 3, Len: 85
+7:205  0:000    19. 772DE7B0: 'SSDT', 'CpuSsdt', Rev: 2, Len: 3672
+7:205  0:000    20. 772DF608: 'SSDT', 'SgPeg', Rev: 2, Len: 209
+7:205  0:000    21. 772DF6E0: 'SSDT', 'OptTabl', Rev: 1, Len: 6655
+7:205  0:000  Found UEFI Acpi 2.0 RSDP at 772BA000
+7:205  0:000  Saving ACPI tables from RSDP 772BA000 to EFI\CLOVER\ACPI\origin ...
+7:205  0:000   772BA000: 'RSD PTR ', Rev: 2 (Acpi 2.0 or newer), Len: 36 -> RSDP.aml
+7:232  0:026    (Xsdt: 772BA0A8, Rsdt: 772BA028)
+7:232  0:000    772BA0A8: 'XSDT', 'QA09', Rev: 1, Len: 212 -> XSDT.aml
+7:242  0:010    772BA028: 'RSDT', 'QA09', Rev: 1, Len: 124 -> RSDT.aml
+7:253  0:010    Tables in Xsdt: 22
+7:253  0:000    0. 772D3708: 'FACP', 'QA09', Rev: 5, Len: 268 -> FACP.aml
+7:264  0:011        (Dsdt: 772BA210, Facs: 77AC4F80, XDsdt: 772BA210, XFacs: 0)
+7:264  0:000        772BA210: 'DSDT', 'QA09', Rev: 2, Len: 103668 -> DSDT.aml
+7:275  0:011        77AC4F80: 'FACS', Ver: 2, Len: 64 -> FACS.aml
+7:286  0:010    1. 772D3818: 'APIC', 'QA09', Rev: 3, Len: 188 -> APIC.aml
+7:297  0:010    2. 772D38D8: 'FPDT', 'QA09', Rev: 1, Len: 68 -> FPDT.aml
+7:307  0:010    3. 772D3920: 'FIDT', 'QA09', Rev: 1, Len: 156 -> FIDT.aml
+7:318  0:010    4. 772D39C0: 'MCFG', 'QA09', Rev: 1, Len: 60 -> MCFG.aml
+7:329  0:010    5. 772D3A00: 'HPET', 'QA09', Rev: 1, Len: 56 -> HPET.aml
+7:339  0:010    6. 772D3A38: 'SSDT', 'SataTabl', Rev: 1, Len: 789 -> SSDT-0.aml
+7:350  0:010    7. 772D3D50: 'LPIT', 'SKL', Rev: 1, Len: 148 -> LPIT.aml
+7:361  0:010    8. 772D3DE8: 'SSDT', 'sensrhub', Rev: 2, Len: 584 -> SSDT-1.aml
+7:371  0:010    9. 772D4030: 'SSDT', 'PtidDevc', Rev: 2, Len: 3793 -> SSDT-2.aml
+7:394  0:022    10. 772D4F08: 'SSDT', 'Ther_Rvp', Rev: 2, Len: 3141 -> SSDT-3.aml
+7:404  0:010    11. 772D5B50: 'DBGP', '', Rev: 1, Len: 52 -> DBGP.aml
+7:414  0:010    12. 772D5B88: 'DBG2', '', Rev: 0, Len: 84 -> DBG2.aml
+7:424  0:010    13. 772D5BE0: 'SSDT', 'DptfTabl', Rev: 2, Len: 13782 -> SSDT-4.aml
+7:436  0:011    14. 772D91B8: 'BOOT', 'QA09', Rev: 1, Len: 40 -> BOOT.aml
+7:446  0:010    15. 772D91E0: 'SLIC', 'QA09', Rev: 1, Len: 374 -> SLIC.aml
+7:457  0:010    16. 772D9358: 'SSDT', 'SaSsdt', Rev: 2, Len: 21430 -> SSDT-5.aml
+7:468  0:010    17. 772DE710: 'UEFI', '', Rev: 1, Len: 66 -> UEFI.aml
+7:478  0:010    18. 772DE758: 'MSDM', 'QA09', Rev: 3, Len: 85 -> MSDM.aml
+7:489  0:010    19. 772DE7B0: 'SSDT', 'CpuSsdt', Rev: 2, Len: 3672 -> SSDT-6.aml
+7:499  0:010    20. 772DF608: 'SSDT', 'SgPeg', Rev: 2, Len: 209 -> SSDT-7.aml
+7:510  0:010    21. 772DF6E0: 'SSDT', 'OptTabl', Rev: 1, Len: 6655 -> SSDT-8.aml
+7:521  0:010    Tables in Rsdt: 22
+7:521  0:000    0. 772BA188: 'FACP', 'QA09', Rev: 2, Len: 132 -> RSDT-FACP.aml
+7:531  0:010        (Dsdt: 772BA210, Facs: 77AC4F40)
+7:531  0:000        772BA210: 'DSDT', 'QA09', Rev: 2, Len: 103668
+7:531  0:000        77AC4F40: 'FACS', Ver: 0, Len: 64 -> RSDT-FACS.aml
+7:545  0:013    1. 772D3818: 'APIC', 'QA09', Rev: 3, Len: 188
+7:545  0:000    2. 772D38D8: 'FPDT', 'QA09', Rev: 1, Len: 68
+7:545  0:000    3. 772D3920: 'FIDT', 'QA09', Rev: 1, Len: 156
+7:545  0:000    4. 772D39C0: 'MCFG', 'QA09', Rev: 1, Len: 60
+7:545  0:000    5. 772D3A00: 'HPET', 'QA09', Rev: 1, Len: 56
+7:545  0:000    6. 772D3A38: 'SSDT', 'SataTabl', Rev: 1, Len: 789
+7:545  0:000    7. 772D3D50: 'LPIT', 'SKL', Rev: 1, Len: 148
+7:545  0:000    8. 772D3DE8: 'SSDT', 'sensrhub', Rev: 2, Len: 584
+7:545  0:000    9. 772D4030: 'SSDT', 'PtidDevc', Rev: 2, Len: 3793
+7:545  0:000    10. 772D4F08: 'SSDT', 'Ther_Rvp', Rev: 2, Len: 3141
+7:545  0:000    11. 772D5B50: 'DBGP', '', Rev: 1, Len: 52
+7:545  0:000    12. 772D5B88: 'DBG2', '', Rev: 0, Len: 84
+7:545  0:000    13. 772D5BE0: 'SSDT', 'DptfTabl', Rev: 2, Len: 13782
+7:545  0:000    14. 772D91B8: 'BOOT', 'QA09', Rev: 1, Len: 40
+7:545  0:000    15. 772D91E0: 'SLIC', 'QA09', Rev: 1, Len: 374
+7:545  0:000    16. 772D9358: 'SSDT', 'SaSsdt', Rev: 2, Len: 21430
+7:545  0:000    17. 772DE710: 'UEFI', '', Rev: 1, Len: 66
+7:545  0:000    18. 772DE758: 'MSDM', 'QA09', Rev: 3, Len: 85
+7:545  0:000    19. 772DE7B0: 'SSDT', 'CpuSsdt', Rev: 2, Len: 3672
+7:545  0:000    20. 772DF608: 'SSDT', 'SgPeg', Rev: 2, Len: 209
+7:545  0:000    21. 772DF6E0: 'SSDT', 'OptTabl', Rev: 1, Len: 6655
+7:545  0:000  Found UEFI Acpi 1.0 RSDP at 772BA000
+7:545  0:000  Printing ACPI tables from RSDP 772BA000 ...
+7:545  0:000   772BA000: 'RSD PTR ', Rev: 2 (Acpi 2.0 or newer), Len: 36
+7:545  0:000    (Xsdt: 772BA0A8, Rsdt: 772BA028)
+7:545  0:000    772BA0A8: 'XSDT', 'QA09', Rev: 1, Len: 212
+7:545  0:000    772BA028: 'RSDT', 'QA09', Rev: 1, Len: 124
+7:545  0:000    Tables in Xsdt: 22
+7:545  0:000    0. 772D3708: 'FACP', 'QA09', Rev: 5, Len: 268
+7:545  0:000        (Dsdt: 772BA210, Facs: 77AC4F80, XDsdt: 772BA210, XFacs: 0)
+7:545  0:000        772BA210: 'DSDT', 'QA09', Rev: 2, Len: 103668
+7:545  0:000        77AC4F80: 'FACS', Ver: 2, Len: 64
+7:545  0:000    1. 772D3818: 'APIC', 'QA09', Rev: 3, Len: 188
+7:545  0:000    2. 772D38D8: 'FPDT', 'QA09', Rev: 1, Len: 68
+7:545  0:000    3. 772D3920: 'FIDT', 'QA09', Rev: 1, Len: 156
+7:545  0:000    4. 772D39C0: 'MCFG', 'QA09', Rev: 1, Len: 60
+7:545  0:000    5. 772D3A00: 'HPET', 'QA09', Rev: 1, Len: 56
+7:545  0:000    6. 772D3A38: 'SSDT', 'SataTabl', Rev: 1, Len: 789
+7:545  0:000    7. 772D3D50: 'LPIT', 'SKL', Rev: 1, Len: 148
+7:545  0:000    8. 772D3DE8: 'SSDT', 'sensrhub', Rev: 2, Len: 584
+7:545  0:000    9. 772D4030: 'SSDT', 'PtidDevc', Rev: 2, Len: 3793
+7:545  0:000    10. 772D4F08: 'SSDT', 'Ther_Rvp', Rev: 2, Len: 3141
+7:545  0:000    11. 772D5B50: 'DBGP', '', Rev: 1, Len: 52
+7:545  0:000    12. 772D5B88: 'DBG2', '', Rev: 0, Len: 84
+7:545  0:000    13. 772D5BE0: 'SSDT', 'DptfTabl', Rev: 2, Len: 13782
+7:545  0:000    14. 772D91B8: 'BOOT', 'QA09', Rev: 1, Len: 40
+7:545  0:000    15. 772D91E0: 'SLIC', 'QA09', Rev: 1, Len: 374
+7:545  0:000    16. 772D9358: 'SSDT', 'SaSsdt', Rev: 2, Len: 21430
+7:545  0:000    17. 772DE710: 'UEFI', '', Rev: 1, Len: 66
+7:545  0:000    18. 772DE758: 'MSDM', 'QA09', Rev: 3, Len: 85
+7:545  0:000    19. 772DE7B0: 'SSDT', 'CpuSsdt', Rev: 2, Len: 3672
+7:545  0:000    20. 772DF608: 'SSDT', 'SgPeg', Rev: 2, Len: 209
+7:545  0:000    21. 772DF6E0: 'SSDT', 'OptTabl', Rev: 1, Len: 6655
+7:545  0:000    Tables in Rsdt: 22
+7:545  0:000    0. 772BA188: 'FACP', 'QA09', Rev: 2, Len: 132
+7:545  0:000        (Dsdt: 772BA210, Facs: 77AC4F40)
+7:545  0:000        772BA210: 'DSDT', 'QA09', Rev: 2, Len: 103668
+7:545  0:000        77AC4F40: 'FACS', Ver: 0, Len: 64
+7:545  0:000    1. 772D3818: 'APIC', 'QA09', Rev: 3, Len: 188
+7:545  0:000    2. 772D38D8: 'FPDT', 'QA09', Rev: 1, Len: 68
+7:545  0:000    3. 772D3920: 'FIDT', 'QA09', Rev: 1, Len: 156
+7:545  0:000    4. 772D39C0: 'MCFG', 'QA09', Rev: 1, Len: 60
+7:545  0:000    5. 772D3A00: 'HPET', 'QA09', Rev: 1, Len: 56
+7:545  0:000    6. 772D3A38: 'SSDT', 'SataTabl', Rev: 1, Len: 789
+7:545  0:000    7. 772D3D50: 'LPIT', 'SKL', Rev: 1, Len: 148
+7:545  0:000    8. 772D3DE8: 'SSDT', 'sensrhub', Rev: 2, Len: 584
+7:545  0:000    9. 772D4030: 'SSDT', 'PtidDevc', Rev: 2, Len: 3793
+7:545  0:000    10. 772D4F08: 'SSDT', 'Ther_Rvp', Rev: 2, Len: 3141
+7:545  0:000    11. 772D5B50: 'DBGP', '', Rev: 1, Len: 52
+7:545  0:000    12. 772D5B88: 'DBG2', '', Rev: 0, Len: 84
+7:545  0:000    13. 772D5BE0: 'SSDT', 'DptfTabl', Rev: 2, Len: 13782
+7:545  0:000    14. 772D91B8: 'BOOT', 'QA09', Rev: 1, Len: 40
+7:545  0:000    15. 772D91E0: 'SLIC', 'QA09', Rev: 1, Len: 374
+7:545  0:000    16. 772D9358: 'SSDT', 'SaSsdt', Rev: 2, Len: 21430
+7:545  0:000    17. 772DE710: 'UEFI', '', Rev: 1, Len: 66
+7:545  0:000    18. 772DE758: 'MSDM', 'QA09', Rev: 3, Len: 85
+7:545  0:000    19. 772DE7B0: 'SSDT', 'CpuSsdt', Rev: 2, Len: 3672
+7:545  0:000    20. 772DF608: 'SSDT', 'SgPeg', Rev: 2, Len: 209
+7:545  0:000    21. 772DF6E0: 'SSDT', 'OptTabl', Rev: 1, Len: 6655
